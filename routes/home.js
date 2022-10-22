@@ -12,6 +12,14 @@ router.get(
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
+router.get(
+  "/oauth2callback",
+  passport.authenticate("google", {
+    successRedirect: "/users",
+    failureRedirect: "/users",
+  })
+);
+
 router.get("/logout", function (req, res, next) {
   req.logout(function (err) {
     if (err) return next(err);
