@@ -1,11 +1,9 @@
-var express = require("express");
-var router = express.Router();
+var router = require("express").Router();
 const passport = require("passport");
+const usersCtrl = require("../controllers/users");
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("home", { title: "Study Smart" });
-});
+router.get("/", usersCtrl.index);
 
 router.get(
   "/auth/google",
