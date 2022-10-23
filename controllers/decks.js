@@ -1,9 +1,9 @@
 const User = require("../models/user");
 
-module.exports = {
-    index,
-  };
-  
 function index(req, res) {
-    res.render("decks/index.ejs");
-  }
+  res.render("decks/index"); //WHY WONT YOU REND
+}
+
+module.exports = {
+  index,
+};

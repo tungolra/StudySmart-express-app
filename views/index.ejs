@@ -1,40 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-  </head>
+  <%- include("./partials/head.ejs") %> <%- include("./partials/header.ejs") %>
   <body>
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper">
-          <a href="" class="brand-logo left">StudySmart</a>
-          <!-- Add login UI here -->
-          <ul class="right">
-            <li>
-              <% if (user) { %>
-              <a href="/logout"
-                ><i class="material-icons left">trending_flat</i>Log Out</a
-              >
-              <% } else { %>
-              <a href="/auth/google"
-                ><i class="material-icons left">vpn_key</i>Login with Google</a
-              >
-              <% } %>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
     <a href="/summary">Summary page</a>
+    <a href="/decks/index">Database</a>
     <h1><%= title %></h1>
     <p>This page will hold the Welcome section and About section</p>
     <p>Will also be the OAuth page</p>

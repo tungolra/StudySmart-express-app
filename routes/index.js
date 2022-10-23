@@ -13,7 +13,7 @@ router.get(
 router.get(
   "/oauth2callback",
   passport.authenticate("google", {
-    successRedirect: "/",
+    successRedirect: "/", // this should change to summary page
     failureRedirect: "/",
   })
 );

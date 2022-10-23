@@ -1,6 +1,6 @@
 var router = require("express").Router();
 const decksCtrl = require("../controllers/decks");
 
-router.get("/", decksCtrl.index);
+router.get("/index", decksCtrl.index);
 
 module.exports = router;

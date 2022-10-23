@@ -9,7 +9,7 @@ require("dotenv").config();
 var app = express();
 require("./config/database");
 const passport = require("passport");
-require("./config/passport")
+require("./config/passport");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -33,9 +33,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", require("./routes/index"));
 app.use("/", require("./routes/users"));
-app.use("/summary", require("./routes/summaries"))
-app.use("/decks", require("./routes/decks"))
-
+app.use("/summary", require("./routes/summaries"));
+app.use("/decks", require("./routes/decks"), function(req, res){
+  console.log("middleware called")
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
