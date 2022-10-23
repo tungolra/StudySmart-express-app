@@ -1,7 +1,7 @@
 const User = require("../models/user");
 
 function index(req, res) {
-  res.render("decks/index"); //WHY WONT YOU REND
+  res.render("decks/index"); 
 }
 
 module.exports = {

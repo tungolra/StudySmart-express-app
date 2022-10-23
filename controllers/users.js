@@ -4,6 +4,7 @@ const User = require("../models/user");
 
 module.exports = {
   index,
+  settings,
 };
 
 function index(req, res) {
@@ -21,4 +22,8 @@ function index(req, res) {
       sortKey,
     });
   });
+}
+
+function settings(req, res) { 
+    res.render("users/settings")
 }

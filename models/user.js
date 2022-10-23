@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 
+//mock database 
+
+
 const flashcardSchema = new mongoose.Schema(
   {
     front: String,
