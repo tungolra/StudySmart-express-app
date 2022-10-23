@@ -4,5 +4,6 @@ const decksCtrl = require("../controllers/decks");
 router.get("/index", decksCtrl.index);
 router.get("/new-deck", decksCtrl.newDeck);
 router.post("/index", decksCtrl.create);
+router.get("/:id", decksCtrl.show)
 
 module.exports = router;

@@ -11,7 +11,13 @@
 <a href="/decks/index">Database</a>
 
 <p>RENDER: will render view of decks which links to specific deck page</p>
+<!-- forEach deck... 
+deck name: 
+a href to flashcard page -->
 
+<!-- table
+col: cards due
+row: #  -->
 <table>
   <thead>
     <tr>
@@ -20,9 +26,11 @@
     </tr>
   </thead>
   <tbody>
-        <tr>
-            <td>deckname</td>
-            <td>#</td>
-        </tr>
+    <% decks.forEach(function(d) {%>
+    <tr>
+      <td><a href="decks/<%=d._id%>"><%= d %></a></td>
+      <td>#</td>
+    </tr>
+    <% }); %>
   </tbody>
 </table>

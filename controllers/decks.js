@@ -19,8 +19,15 @@ function create(req, res) {
     // });
 //   });
 }
+function show (req, res) {
+    //find by ID
+    console.log(req.user)
+    res.render(`decks/show-deck`)
+}
+
 module.exports = {
   index,
   newDeck,
   create,
+  show,
 };
