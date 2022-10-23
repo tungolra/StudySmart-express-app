@@ -1,7 +1,14 @@
 const mongoose = require("mongoose");
 
 //mock database 
+const me = {
+    name: "Ralph", 
+    email: "abc@123.com",
+    googleId: "106847162975287723123",
+    avatar: "https://lh3.googleusercontent.com/a/ALm5wu1YvLMhcM6h3u37aZTwFhETLZ8mGSi1vSXZ-UpK=s96-c",
+    decks: []
 
+ }
 
 const flashcardSchema = new mongoose.Schema(
   {
