@@ -4,36 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheets/summary.css" />
     <title>Document</title>
   </head>
+  <header>
+    <nav>Placeholder</nav>
+  </header>
   <body>
     <p>This is the summary page</p>
-
-    <a href="decks/new-deck"><button>Create Deck</button></a>
-    <a href="/decks/index">Database</a>
-
-    <!-- forEach deck... 
-deck name: 
-a href to flashcard page -->
-
-    <!-- table
-col: cards due
-row: #  -->
-    <table>
-      <thead>
-        <tr>
-          <th>Deck</th>
-          <th>Cards Due:</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% decks.forEach(function(d) {%>
-        <tr>
-          <td><a href="decks/<%=d._id%>"><%= d.name %></a></td>
-          <td>#</td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
+    <div class="display-container">
+      <div class="options-container"></div>
+      <a href="decks/new-deck"><button>Create Deck</button></a>
+      <a href="/decks/index">Database</a>
+      <table>
+        <thead>
+          <tr>
+            <th>Deck</th>
+            <th>Cards Due:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% decks.forEach(function(d) {%>
+          <tr>
+            <td><a href="decks/<%=d._id%>"><%= d.name %></a></td>
+            <td>#</td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>

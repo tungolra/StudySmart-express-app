@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="/stylesheets/decks-index.css" />
     <title>Document</title>
   </head>
+  <header>
+    <nav>Placeholder</nav>
+  </header>
   <p>
     INDEX PAGE/DATABASE RENDER: This page will render the index page that
     populates all the decks and flashcards ASK ABOUT EVENT LISTENERS/SEE
@@ -57,14 +60,17 @@
       <!-- preview -->
       <!-- preview flashcard selected in display view-->
       <div class="preview-container">
-        <div class="flashcard-header-container">
-          <div>Front</div>
-          <div>Back</div>
-        </div>
-        <div class="flashcard-container">
-          <div>(front text)</div>
-          <div>(back text)</div>
-        </div>
+        <section>
+          <strong> Preview </strong>
+          <div class="front">
+            <div class="fc-header"><strong>Front</strong></div>
+            <div>(front text)</div>
+          </div>
+          <div class="back">
+            <div class="fc-header"><strong> Back </strong></div>
+            <div>(back text)</div>
+          </div>
+        </section>
       </div>
     </div>
   </body>
