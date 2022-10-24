@@ -19,6 +19,7 @@ function create(req, res) {
   });
 }
 function show (req, res){
+    
     res.render("flashcards/show-card")
 }
 module.exports = {
