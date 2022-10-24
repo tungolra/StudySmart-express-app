@@ -1,13 +1,79 @@
 <!DOCTYPE html>
 <html>
-  <%- include("./partials/head.ejs") %> <%- include("./partials/header.ejs") %>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheets/index.css" />
+    <title>Welcome Page</title>
+  </head>
+
   <body>
-    <a href="/summary">Summary page</a>
-    <a href="/decks/index">Database</a>
-    <a href="/users/settings">User Settings</a>
-    <h1><%= title %></h1>
-    <p>This page will hold the Welcome section and About section</p>
-    <p>Will also be the OAuth page</p>
-    <p>Will redirect to the summary page after log-in/sign-up</p>
+    <header>
+      <nav>
+          <h1>StudySmart</h1>
+          <!-- Add login UI here -->
+          <ul class="right">
+            <li>
+              <% if (user) { %>
+              <a href="/logout"><i class="fab fa-google"></i>Log Out</a
+              >
+              <% } else { %>
+              <a href="/auth/google"
+                ><i class="fab fa-google">&#xf1a0</i>Login</a
+              >
+              <% } %>
+            </li>
+          </ul>
+      </nav>
+    </header>
+    <section>
+      <p>
+        Temporary placements
+        <a href="/users/settings">User Settings</a>
+        <a href="/summary">Summary page</a>
+        <a href="/decks/index">Database</a>
+        <p>[Will redirect to the summary page after log-in/sign-up]</p>
+      </p>
+      <h2>Welcome! </h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veniam ut
+        eos repudiandae tempore doloremque voluptatem neque impedit voluptas,
+        iusto ipsa vitae corporis nobis quam atque iure molestiae odit
+        doloribus.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veniam ut
+        eos repudiandae tempore doloremque voluptatem neque impedit voluptas,
+        iusto ipsa vitae corporis nobis quam atque iure molestiae odit
+        doloribus.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veniam ut
+        eos repudiandae tempore doloremque voluptatem neque impedit voluptas,
+        iusto ipsa vitae corporis nobis quam atque iure molestiae odit
+        doloribus.
+      </p>
+
+      <h2>About</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veniam ut
+        eos repudiandae tempore doloremque voluptatem neque impedit voluptas,
+        iusto ipsa vitae corporis nobis quam atque iure molestiae odit
+        doloribus.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veniam ut
+        eos repudiandae tempore doloremque voluptatem neque impedit voluptas,
+        iusto ipsa vitae corporis nobis quam atque iure molestiae odit
+        doloribus.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veniam ut
+        eos repudiandae tempore doloremque voluptatem neque impedit voluptas,
+        iusto ipsa vitae corporis nobis quam atque iure molestiae odit
+        doloribus.
+      </p>
+    </section>
   </body>
 </html>

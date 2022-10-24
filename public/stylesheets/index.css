@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* header start */
+header {
+  display: flex;
+}
+nav {
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 5px;
+  align-items: center;
+  background: linear-gradient(to bottom left, rgb(152, 152, 246) 50%, rgb(222, 221, 255) 50%);
+}
+nav > ul > li { 
+    list-style: none;
+}
+/* header end */
+section {
+  margin: 0px 10px;
+}
+section > h2 {
+  margin: 10px 0;
+  justify-content: center;
+}
+section > p {
+  margin: 5px 0;
+}
