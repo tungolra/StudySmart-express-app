@@ -18,8 +18,11 @@ function create(req, res) {
     res.redirect(`/decks/${deckId}`);
   });
 }
-
+function show (req, res){
+    res.render("flashcards/show-card")
+}
 module.exports = {
   newCard,
   create,
+  show,
 };
