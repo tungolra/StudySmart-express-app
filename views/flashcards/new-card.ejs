@@ -1,14 +1,17 @@
 THIS FILE WILL RENDER PAGE TO CREATE NEW CARD
 
-<form action="" method="POST">
-    <label>Front</label>
-    <input type="text" name="front">
-    <!-- temporary breaks -->
-    <br> 
-    <label>Back</label>
-    <input type="text" name="back">
-    <!-- temporary breaks -->
-    <br>
-    <label>Tags</label>
-    <input type="text" name="tags">
+<form action="/decks/<%=deck%>" method="POST">
+  <label>Front</label>
+  <input type="text" name="front" />
+  <!-- temporary breaks -->
+  <br />
+  <label>Back</label>
+  <input type="text" name="back" />
+  <!-- temporary breaks -->
+  <br />
+  <label>Tags</label>
+  <input type="text" name="tags" />
+  <!-- temporary breaks -->
+  <br />
+  <button type="submit">Submit</button>
 </form>
