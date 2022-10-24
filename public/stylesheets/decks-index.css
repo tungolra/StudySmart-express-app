@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  border: 3px solid orange;
+}
+.sidebar {
+  border: 3px solid black;
+}
+.display-container {
+  border: 3px solid gold;
+}
+.preview-container {
+  border: 3px solid pink;
+}
+.flashcard-header-container {
+  border: 3px solid blue;
+}
+.flashcard-container {
+  border: 3px solid red;
+}
