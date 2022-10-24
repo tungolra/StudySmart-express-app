@@ -17,7 +17,9 @@ const flashcardSchema = new mongoose.Schema(
   {
     front: String,
     back: String,
+    // date to default to current day
     due: Date,
+    // status to default to pending..should i have a "new" status?
     status: String,
     tags: { type: String },
   },
