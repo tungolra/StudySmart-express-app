@@ -1,14 +1,22 @@
 const User = require("../models/user");
 
 function newCard(req, res) {
-  let deck = req.params.id
-
+  let deck = req.params.id;
   res.render("flashcards/new-card", { deck });
 }
 
 function create(req, res) {
-  console.log(req.params.id);
-  res.redirect("show-deck")
+  let deckId = req.params.id;
+  let deck = req.user.decks.find((deck) => {
+    if (deck._id == req.params.id) {
+      return true;
+    }
+  });
+  deck.flashcards.push(req.body)
+  req.user.save(function (err) {
+    if (err) return res.send(err.message);
+    res.redirect(`/decks/${deckId}`);
+  });
 }
 
 module.exports = {

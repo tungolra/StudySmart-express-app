@@ -20,7 +20,7 @@ function create(req, res) {
 function show(req, res) {
   //find by ID
   let deck = req.params.id;
-  res.render(`decks/show-deck`, { deck });
+  res.render("decks/show-deck", { deck });
 }
 
 module.exports = {
