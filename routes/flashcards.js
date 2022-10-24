@@ -1,8 +1,6 @@
 var router = require("express").Router();
-const flashcardsCtrl = require("../controllers/flashcards")
+const flashcardsCtrl = require("../controllers/flashcards");
 
-// router.get()
-
-
+router.get("/new-card", flashcardsCtrl.newCard);
 
 module.exports = router;

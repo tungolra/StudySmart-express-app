@@ -28,7 +28,7 @@ row: #  -->
   <tbody>
     <% decks.forEach(function(d) {%>
     <tr>
-      <td><a href="decks/<%=d._id%>"><%= d %></a></td>
+      <td><a href="decks/<%=d._id%>"><%= d.name %></a></td>
       <td>#</td>
     </tr>
     <% }); %>

@@ -8,6 +8,7 @@ module.exports = {
 };
 
 function index(req, res) {
+    
   let modelQuery = req.query.name
     ? { name: new RegExp(req.query.name, "i") }
     : {};

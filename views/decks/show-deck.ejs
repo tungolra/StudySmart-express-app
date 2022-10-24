@@ -2,19 +2,20 @@ THIS PAGE WILL RENDER SHOW PAGE FOR A SELECTED DECK
 
 <!-- title: Deck Name 
 cards due: -->
-<button>Add Card to Deck</button>
+<a href="flashcards/new-card" id="<%=deck%>"><button>Add Card to Deck</button></a>
+<p><%=deck%></p>
 <p>this button should redirect to new-card.ejs</p>
 <table>
-    <thead>
-        <tr>
-            <th>Cards Due: </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>#</td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th>Cards Due:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>#</td>
+    </tr>
+  </tbody>
 </table>
 <button>Study Now</button>
 <p>Study now should direct to flashcards show-card.ejs</p>

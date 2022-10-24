@@ -8,7 +8,6 @@ function newDeck(req, res) {
   res.render("decks/new-deck");
 }
 function create(req, res) {
-  //create function
   User.find(req.user, function (err, user) {
     if (err) return res.send(err.message);
     req.user.decks.push(req.body);
@@ -20,8 +19,8 @@ function create(req, res) {
 }
 function show(req, res) {
   //find by ID
-  // console.log(req.user)
-  res.render(`decks/show-deck`);
+  let deck = req.params.id;
+  res.render(`decks/show-deck`, { deck });
 }
 
 module.exports = {
