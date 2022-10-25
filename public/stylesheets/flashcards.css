@@ -2,6 +2,9 @@
   box-sizing: border-box;
   margin: 0px;
 }
+body { 
+    background-color: rgb(216, 216, 248);
+}
 header {
   display: flex;
 }
@@ -18,23 +21,25 @@ nav {
     rgb(222, 221, 255) 50%
   );
 }
-.show-container { 
-
-}
+/* .show-container {
+} */
 .front-container {
-  border: 2px solid black;
-  margin: 0 5px;
+
+  margin: 10px 5px;
   padding: 5px;
   height: auto;
-  margin-top: 10px;
+
+  border-radius: 10px;
+  background-color: rgba(240, 248, 255, 0.753);
 }
 .back-container {
-  border: 2px solid black;
+
   margin: 0 5px;
   padding: 5px;
   height: auto;
   margin-bottom: 10px;
-  
+  border-radius: 10px;
+  background-color: rgba(240, 248, 255, 0.753);
 }
 .options-container {
   display: flex;

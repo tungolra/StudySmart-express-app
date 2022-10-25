@@ -2,7 +2,13 @@ const { MongoDriverError } = require("mongodb");
 const User = require("../models/user");
 
 function index(req, res) {
-  res.render("decks/index");
+  let decks = req.user.decks;
+  console.log(decks);
+  let allCards = decks.reduce((acc, deck) => {
+    let newDeck = deck.flashcards.map(card => ({flashcard: card, deckName: deck.name}))
+    return [...acc, ...newDeck]  
+  }, []);
+  res.render("decks/index", { decks, allCards });
 }
 function newDeck(req, res) {
   res.render("decks/new-deck");

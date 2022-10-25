@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0;
 }
+body {
+    background-color: rgb(216, 216, 248);
+  }
 /* header start */
 header {
   display: flex;
