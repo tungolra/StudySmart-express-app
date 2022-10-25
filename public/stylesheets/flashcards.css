@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+header {
+  display: flex;
+}
+nav {
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 5px;
+  align-items: center;
+  background: linear-gradient(
+    to bottom left,
+    rgb(152, 152, 246) 50%,
+    rgb(222, 221, 255) 50%
+  );
+}
+.show-container { 
+
+}
+.front-container {
+  border: 2px solid black;
+  margin: 0 5px;
+  padding: 5px;
+  height: auto;
+  margin-top: 10px;
+}
+.back-container {
+  border: 2px solid black;
+  margin: 0 5px;
+  padding: 5px;
+  height: auto;
+  margin-bottom: 10px;
+  
+}
+.options-container {
+  display: flex;
+}
+/* .reveal::before { 
+
+}
+.post-reveal::after {
+
+} */
+
+.reveal {
+  display: flex;
+  flex-direction: row;
+}
+.post-reveal {
+  display: flex;
+  flex-direction: row;
+}
+button {
+  border-radius: 5px;
+}
+.edit {
+  align-self: flex-end;
+}

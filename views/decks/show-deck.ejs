@@ -8,37 +8,35 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link rel="stylesheet" href="/stylesheets/decks-index.css" />
+    <link rel="stylesheet" href="/stylesheets/summary.css" />
     <title>Document</title>
   </head>
   <body>
     <header>
       <nav>
-        <a href=""><span class="material-symbols-outlined">
-          arrow_back_ios
-          </span></a>
+        <a href="/summary"
+          ><span class="material-symbols-outlined"> arrow_back_ios </span
+          ><span class="material-symbols-outlined"> empty_dashboard </span></a
+        >
         <h1>Placeholder</h1>
-        <span class="material-symbols-outlined">
-          logout
-          </span>
+        <span class="material-symbols-outlined"> logout </span>
       </nav>
     </header>
-    <a href="/decks/<%=deck%>/flashcards/new"
-      ><button>Add Card to Deck</button></a
-    >
-
-    <table>
-      <thead>
-        <tr>
-          <th>Cards Due:</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>#</td>
-        </tr>
-      </tbody>
-    </table>
-    <a href="/decks/<%=deck%>/flashcards/"><button>Study Now</button></a>
+    <div class="display-container">
+      <a href="/decks/<%=deck%>/flashcards/new"><button class="show-deck-btns">Add Card to Deck</button></a>
+      <table>
+        <thead>
+          <tr>
+            <th>Cards Due:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#</td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="/decks/<%=deck%>/flashcards/"><button class="show-deck-btns">Study Now</button></a>
+    </div>
   </body>
 </html>

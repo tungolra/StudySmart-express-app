@@ -27,7 +27,8 @@ nav > h1 {
 }
 .display-container {
   display: flex;
-
+  border: 1px solid black;
+  justify-content: center;
   border-radius: 10px;
   margin: 20px 5px;
   flex-direction: column;
@@ -65,4 +66,8 @@ button {
   text-decoration: none;
   width: 70px;
   border-radius: 10px;
+}
+.show-deck-btns {
+/* WHY WONT U CENTER */
+  justify-content: center;
 }
