@@ -20,20 +20,40 @@ nav {
     rgb(222, 221, 255) 50%
   );
 }
-nav > h1 { 
-    text-align: center;
+nav > h1 {
+  text-align: center;
 }
 nav > ul > li {
   list-style: none;
 }
 /* header end */
-section {
-  margin: 0px 10px;
+
+.dropdown:hover .features-menu {
+  display: flex;
+  flex-direction: column;
+  background: #b2d6ff;
+  border-radius: 5px;
+  padding-top: 60px;
+
+  position: absolute;
+  top: -25px;
+  left: -30px;
+  z-index: 1;
 }
-section > h2 {
-  margin: 10px 0;
-  justify-content: center;
+.features-menu {
+  display: none;
 }
-section > p {
-  margin: 5px 0;
+/* .features-menu li { 
+    border-bottom: 1px solid #FFF;
+}
+.features-menu li:last-of-type { 
+    border-bottom: none;
+} */
+.dropdown {
+  position: relative;
+}
+.dropdown > span {
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
 }

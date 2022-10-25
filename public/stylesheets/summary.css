@@ -45,9 +45,10 @@ nav > h1 {
 
 table {
   background-color: lightgray;
-  border: 3px solid black;
-  border-collapse: collapse;
+  border-radius: 10px;
+  /* border-collapse: collapse; */
   margin-top: 15px;
+  border: 1px solid black;
 }
 th { 
   border-bottom: 1px solid black;
@@ -57,9 +58,11 @@ td {
   text-align: center;
   padding: 5px 0;
   grid-gap: 0;
+  
 }
 
 button { 
   text-decoration: none;
   width: 70px;
+  border-radius: 10px;
 }
