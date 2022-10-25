@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0;
 }
+a {
+  text-decoration: none;
+}
 header {
   display: flex;
 }
@@ -19,25 +22,44 @@ nav {
     rgb(222, 221, 255) 50%
   );
 }
+nav > h1 { 
+  margin: 0 auto;
+}
 .display-container {
   display: flex;
-  border: 3px solid red;
+
   border-radius: 10px;
   margin: 20px 5px;
   flex-direction: column;
 }
-.options-container > a {
-  display: block;
+.options-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.database { 
+  width: 75px;
+
+  height: max-content;
 }
 
 table {
   background-color: lightgray;
-  border: 1px solid red;
+  border: 3px solid black;
+  border-collapse: collapse;
+  margin-top: 15px;
 }
-
+th { 
+  border-bottom: 1px solid black;
+}
 th,
 td {
   text-align: center;
-  border: 1px solid blue;
   padding: 5px 0;
+  grid-gap: 0;
+}
+
+button { 
+  text-decoration: none;
+  width: 70px;
 }

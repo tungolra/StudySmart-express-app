@@ -20,6 +20,9 @@ nav {
     rgb(222, 221, 255) 50%
   );
 }
+nav > h1 { 
+    text-align: center;
+}
 nav > ul > li {
   list-style: none;
 }
