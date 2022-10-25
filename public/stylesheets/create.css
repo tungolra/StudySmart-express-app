@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+  }
+  body {
+    background-color: rgb(216, 216, 248);
+  }
+  header {
+    display: flex;
+  }
+  nav {
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 5px;
+    align-items: center;
+    background: linear-gradient(
+      to bottom left,
+      rgb(152, 152, 246) 50%,
+      rgb(222, 221, 255) 50%
+    );
+  }

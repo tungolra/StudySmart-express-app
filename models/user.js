@@ -6,7 +6,7 @@ const flashcardSchema = new mongoose.Schema(
     front: String,
     back: String,
     due: {type: Date, default: new Date()}, 
-    // status: String,
+    position: Number,
     tags: { type: String },
     status: { type: String, default: "New"}
   },

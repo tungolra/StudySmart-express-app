@@ -31,8 +31,9 @@
           <li>
             Decks
             <ul class="decks-menu">
-              <!-- decks.forEach... -->
-              <li>Deck 1</li>
+              <%decks.forEach(d => {%>
+              <li><%=d.name%></li>
+              <%});%>
             </ul>
           </li>
           <li>Due</li>
