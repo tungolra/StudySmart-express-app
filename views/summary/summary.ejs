@@ -20,14 +20,16 @@
         <thead>
           <tr>
             <th>Deck</th>
-            <th>Cards Due:</th>
+            <th>Cards Due</th>
+            <th>Total Cards</th>
           </tr>
         </thead>
         <tbody>
           <% decks.forEach(function(d) {%>
           <tr>
             <td><a href="decks/<%=d._id%>"><%= d.name %></a></td>
-            <td>#</td>
+            <td>#%></td>
+            <td><%=d.flashcards.length%></td>
           </tr>
           <% }); %>
         </tbody>

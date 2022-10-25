@@ -14,10 +14,14 @@ nav {
   justify-content: space-between;
   padding: 10px 5px;
   align-items: center;
-  background: linear-gradient(to bottom left, rgb(152, 152, 246) 50%, rgb(222, 221, 255) 50%);
+  background: linear-gradient(
+    to bottom left,
+    rgb(152, 152, 246) 50%,
+    rgb(222, 221, 255) 50%
+  );
 }
-nav > ul > li { 
-    list-style: none;
+nav > ul > li {
+  list-style: none;
 }
 /* header end */
 section {

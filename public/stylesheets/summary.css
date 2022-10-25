@@ -34,9 +34,7 @@ table {
   background-color: lightgray;
   border: 1px solid red;
 }
-thead,
-tbody {
-}
+
 th,
 td {
   text-align: center;
