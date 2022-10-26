@@ -29,7 +29,8 @@ function show(req, res) {
   res.render("decks/show-deck", { deck });
 }
 function updateDeck(req, res) {
-
+  // pass in deck for input value field
+res.render("decks/edit")
 }
 function deleteDeck (req, res){
 
