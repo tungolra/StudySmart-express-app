@@ -27,7 +27,10 @@
     </header>
     <h2><%=deckName%></h2>
     <!-- delete button here  -->
-    <form action="/decks/<%=cardID%>?_method=DELETE" method="POST">
+    <form
+      action="/decks/<%=foundDeck._id%>/flashcards/<%=cardID%>?_method=DELETE"
+      method="POST"
+    >
       <button type="submit">
         <span class="material-symbols-outlined"> delete </span>
       </button>
@@ -52,7 +55,8 @@
             <input type="text" name="backEdit" value="<%=fc.back%>" />
           </div>
           <div class="tags">
-            <label>Tags: </label> <input type="text" name="tagEdit" value="<%=fc.tags%>" />
+            <label>Tags: </label>
+            <input type="text" name="tagEdit" value="<%=fc.tags%>" />
           </div>
           <button type="submit">Save Changes</button>
         </form>

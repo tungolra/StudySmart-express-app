@@ -48,8 +48,19 @@ function edit(req, res) {
     res.redirect("/decks/index");
   });
 }
-function deleteCard(req, res) {}
-
+function deleteCard(req, res) {
+  let deckID = req.user.decks.findIndex(
+    (deck) => deck._id == req.params.deckID
+  );
+  let cardID = req.user.decks[deckID].flashcards.findIndex(
+    (c) => c._id == req.params.cardID
+  );
+  req.user.decks[deckID].flashcards.splice(cardID, 1);
+  req.user.save(function (err) {
+    if (err) return res.send(err.message);
+    res.redirect("/decks/index");
+  });
+}
 module.exports = {
   newCard,
   create,
