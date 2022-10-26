@@ -35,13 +35,13 @@ function show(req, res) {
 }
 function updateDeck(req, res) {
   // pass in deck for input value field
-  let deckID = req.params.id;
   let deck = req.user.decks.find((deck) => {
     if (deck._id == req.params.id) {
       return true;
     }
   });
-  res.render("decks/edit", { deckID, deck });
+  console.log(deck)
+  res.render("decks/edit", { deck });
 }
 function edit(req, res) {
   let idx = req.user.decks.findIndex((deck) => deck._id == req.params.id);

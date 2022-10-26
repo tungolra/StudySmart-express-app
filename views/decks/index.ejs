@@ -70,7 +70,9 @@
             <th><%= card.flashcard.due %></th>
             <th><%= card.deckName %></th>
             <th>
-              <a href="/flashcards/<%=card.flashcard._id%>/edit">
+              <a
+                href="/flashcards/<%=card.flashcard._id%>/edit?deckName=<%=card.deckName%>"
+              >
                 <span class="material-symbols-outlined"> edit </span></a
               >
             </th>

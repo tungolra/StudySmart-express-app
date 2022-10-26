@@ -28,21 +28,15 @@ function updateCard(req, res) {
   // pass in card object to fill preview
   let decks = req.user.decks;
   let cardID = req.params.id;
+  let deckName = req.query.deckName
+  console.log(req.query.deckName)
 
-  let allCards = decks.reduce((acc, deck) => {
-    let newDeck = deck.flashcards.map((card) => ({
-      flashcard: card,
-      deckName: deck.name,
-    }));
-    return [...acc, ...newDeck];
-  }, []);
-
-  // let fc = newDeck.flashcard.find((c) => {
-  //   if (c._id == req.params.id) {
-  //     console.log("_id: ".c._id, "req.params.id: ", req.params.id);
-  //     return true;
-  //   }
-  // });
+  let fc = deckName.flashcards.find((c) => {
+    if (c._id == req.params.id) {
+      console.log("_id: ".c._id, "req.params.id: ", req.params.id);
+      return true;
+    }
+  });
 
   res.render("flashcards/edit", { cardID });
 }

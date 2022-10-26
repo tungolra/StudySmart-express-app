@@ -28,14 +28,14 @@
     <h2><%=deck.name%></h2>
 
     <h3>Edit Name</h3>
-    <form action="/decks/<%=deckID%>?_method=PUT" method="POST">
+    <form action="/decks/<%=deck._id%>?_method=PUT" method="POST">
       <input type="text" name="editName" value="<%=deck.name%>" />
       <button type="submit">Save</button>
     </form>
 
     <!-- delete button here  -->
     <h3>Delete Deck</h3>
-    <form action="/decks/<%=deckID%>?_method=DELETE" method="POST">
+    <form action="/decks/<%=deck._id%>?_method=DELETE" method="POST">
       <button type="submit">
         <span class="material-symbols-outlined"> delete </span>
       </button>

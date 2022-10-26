@@ -16,6 +16,7 @@ const flashcardSchema = new mongoose.Schema(
 );
 const deckSchema = new mongoose.Schema(
   {
+    //make unique
     name: String,
     flashcards: [flashcardSchema],
   },
