@@ -59,43 +59,25 @@
             <th>Flashcard</th>
             <th>Due</th>
             <th>Deck Name</th>
+            <th>Edit</th>
           </tr>
         </thead>
         <%allCards.forEach((card) => {%>
-          
+
         <tbody>
           <tr>
             <th><%= card.flashcard.front %></th>
             <th><%= card.flashcard.due %></th>
             <th><%= card.deckName %></th>
+            <th>
+              <a href="/flashcards/<%=card.flashcard._id%>/edit">
+                <span class="material-symbols-outlined"> edit </span></a
+              >
+            </th>
           </tr>
         </tbody>
         <%})%>
-
-        <!-- <tbody>
-          <tr>
-            <th>(front card text up to 100char or so</th>
-            <th>(Date)</th>
-            <th>Deck Name</th>
-          </tr>
-        </tbody> -->
       </table>
-
-      <!-- preview -->
-      <!-- preview flashcard selected in display view-->
-      <div class="preview-container">
-        <section>
-          <strong> Preview </strong>
-          <div class="front">
-            <div class="fc-header"><strong>Front</strong></div>
-            <div>(front text)</div>
-          </div>
-          <div class="back">
-            <div class="fc-header"><strong> Back </strong></div>
-            <div>(back text)</div>
-          </div>
-        </section>
-      </div>
     </div>
   </body>
 </html>

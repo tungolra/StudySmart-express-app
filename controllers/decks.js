@@ -28,10 +28,18 @@ function show(req, res) {
   let deck = req.params.id;
   res.render("decks/show-deck", { deck });
 }
+function updateDeck(req, res) {
+
+}
+function deleteDeck (req, res){
+
+}
 
 module.exports = {
   index,
   newDeck,
   create,
   show,
+  updateDeck,
+  deleteDeck
 };
