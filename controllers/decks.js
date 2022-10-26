@@ -40,7 +40,7 @@ function updateDeck(req, res) {
       return true;
     }
   });
-  console.log(deck)
+  console.log(deck);
   res.render("decks/edit", { deck });
 }
 function edit(req, res) {

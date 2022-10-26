@@ -25,7 +25,7 @@
         <a href="/"><span class="material-symbols-outlined"> logout </span></a>
       </nav>
     </header>
-    <h2>Deck Name</h2>
+    <h2><%=deckName%></h2>
     <!-- delete button here  -->
     <form action="/decks/<%=cardID%>?_method=DELETE" method="POST">
       <button type="submit">
@@ -38,15 +38,21 @@
     <!-- update form here -->
     <div class="preview-container">
       <section>
-        <form action="/decks/<%=cardID%>?_method=PUT" method="POST">
+        <form
+          action="/decks/<%=foundDeck._id%>/flashcards/<%=cardID%>?_method=PUT"
+          method="POST"
+        >
           <strong> Preview </strong>
           <div class="front">
             <div class="fc-header"><strong>Front</strong></div>
-            <input type="text" name="frontEdit" value="" />
+            <input type="text" name="frontEdit" value="<%=fc.front%>" />
           </div>
           <div class="back">
             <div class="fc-header"><strong> Back </strong></div>
-            <input type="text" name="backEdit" value="" />
+            <input type="text" name="backEdit" value="<%=fc.back%>" />
+          </div>
+          <div class="tags">
+            <label>Tags: </label> <input type="text" name="tagEdit" value="<%=fc.tags%>" />
           </div>
           <button type="submit">Save Changes</button>
         </form>

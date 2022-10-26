@@ -1,5 +1,5 @@
 const User = require("../models/user");
-const Deck = require("../models/deck");
+
 
 function summary(req, res) {
   User.findById(req.params.id, function (err, user) {
