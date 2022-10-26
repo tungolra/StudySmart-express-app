@@ -23,7 +23,9 @@
       </nav>
     </header>
     <div class="display-container">
-      <a href="/decks/<%=deck%>/flashcards/new"><button class="show-deck-btns">Add Card to Deck</button></a>
+      <a href="/decks/<%=deck._id%>/flashcards/new"
+        ><button class="show-deck-btns">Add Card to Deck</button></a
+      >
       <table>
         <thead>
           <tr>
@@ -36,7 +38,9 @@
           </tr>
         </tbody>
       </table>
-      <a href="/decks/<%=deckID%>/flashcards/"><button class="show-deck-btns">Study Now</button></a>
+      <a href="/decks/<%=deckID%>/flashcards/"
+        ><button class="show-deck-btns">Study Now</button></a
+      >
     </div>
   </body>
 </html>

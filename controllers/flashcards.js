@@ -2,21 +2,18 @@ const User = require("../models/user");
 // const { newDeck } = require("./decks");
 
 function newCard(req, res) {
-  let deck = req.params.id;
-  res.render("flashcards/new-card", { deck });
+  let deckID = req.params.id;
+  res.render("flashcards/new-card", { deckID });
 }
 
 function create(req, res) {
-  let deckId = req.params.id;
-  let deck = req.user.decks.find((deck) => {
-    if (deck._id == req.params.id) {
-      return true;
-    }
-  });
-  deck.flashcards.push(req.body);
+  let deckID = req.params.id;
+  let deckIdx = req.user.decks.findIndex((deck) => deck._id == deckID);
+  console.log(deckIdx);
+  req.user.decks[deckIdx].flashcards.push(req.body);
   req.user.save(function (err) {
     if (err) return res.send(err.message);
-    res.redirect(`/decks/${deckId}`);
+    res.redirect(`/decks/${deckID}`);
   });
 }
 function show(req, res) {
