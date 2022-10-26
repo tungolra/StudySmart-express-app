@@ -26,19 +26,17 @@ function updateCard(req, res) {
   // let decks = req.user.decks
   // pass in deck name for h2
   // pass in card object to fill preview
-  let decks = req.user.decks;
+
   let cardID = req.params.id;
-  let deckName = req.query.deckName
-  console.log(req.query.deckName)
-
-  let fc = deckName.flashcards.find((c) => {
-    if (c._id == req.params.id) {
-      console.log("_id: ".c._id, "req.params.id: ", req.params.id);
-      return true;
-    }
+  let deckName = req.query.deckName.replace("%20", " ");
+  let foundDeck = req.user.decks.find(
+    (deck) => { let deckTemp = deck.name.replace(/\s/g, "") 
+    let deckTemp2 = deckName.replace(/\s/g, "") 
+    if (deckTemp === deckTemp2)return true
   });
+  let fc = foundDeck.flashcards.find((c) => c._id == req.params.id);
 
-  res.render("flashcards/edit", { cardID });
+  res.render("flashcards/edit", { cardID, fc, deckName });
 }
 function edit(req, res) {}
 function deleteCard(req, res) {}

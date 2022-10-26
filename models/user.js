@@ -1,14 +1,13 @@
 const mongoose = require("mongoose");
 
-
 const flashcardSchema = new mongoose.Schema(
   {
     front: String,
     back: String,
-    due: {type: Date, default: new Date()}, 
+    due: { type: Date, default: new Date() },
     position: Number,
     tags: { type: String },
-    status: { type: String, default: "New"}
+    status: { type: String, default: "New" },
   },
   {
     timestamps: true,
@@ -17,7 +16,7 @@ const flashcardSchema = new mongoose.Schema(
 const deckSchema = new mongoose.Schema(
   {
     //make unique
-    name: String,
+    name: { type: String, unique: true },
     flashcards: [flashcardSchema],
   },
   {
