@@ -18,7 +18,7 @@
           ><span class="material-symbols-outlined"> arrow_back_ios </span
           ><span class="material-symbols-outlined"> empty_dashboard </span></a
         >
-        <h1>Placeholder</h1>
+        <h1><%=deck.name%></h1>
         <span class="material-symbols-outlined"> logout </span>
       </nav>
     </header>
@@ -36,7 +36,7 @@
           </tr>
         </tbody>
       </table>
-      <a href="/decks/<%=deck%>/flashcards/"><button class="show-deck-btns">Study Now</button></a>
+      <a href="/decks/<%=deckID%>/flashcards/"><button class="show-deck-btns">Study Now</button></a>
     </div>
   </body>
 </html>

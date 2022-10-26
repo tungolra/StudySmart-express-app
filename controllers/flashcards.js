@@ -1,4 +1,5 @@
 const User = require("../models/user");
+// const { newDeck } = require("./decks");
 
 function newCard(req, res) {
   let deck = req.params.id;
@@ -25,10 +26,27 @@ function updateCard(req, res) {
   // let decks = req.user.decks
   // pass in deck name for h2
   // pass in card object to fill preview
+  let decks = req.user.decks;
   let cardID = req.params.id;
+
+  let allCards = decks.reduce((acc, deck) => {
+    let newDeck = deck.flashcards.map((card) => ({
+      flashcard: card,
+      deckName: deck.name,
+    }));
+    return [...acc, ...newDeck];
+  }, []);
+
+  // let fc = newDeck.flashcard.find((c) => {
+  //   if (c._id == req.params.id) {
+  //     console.log("_id: ".c._id, "req.params.id: ", req.params.id);
+  //     return true;
+  //   }
+  // });
+
   res.render("flashcards/edit", { cardID });
 }
-function edit(req, res){}
+function edit(req, res) {}
 function deleteCard(req, res) {}
 
 module.exports = {

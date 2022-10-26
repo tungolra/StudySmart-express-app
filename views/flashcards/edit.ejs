@@ -38,15 +38,18 @@
     <!-- update form here -->
     <div class="preview-container">
       <section>
-        <strong> Preview </strong>
-        <div class="front">
-          <div class="fc-header"><strong>Front</strong></div>
-          <div>(front text)</div>
-        </div>
-        <div class="back">
-          <div class="fc-header"><strong> Back </strong></div>
-          <div>(back text)</div>
-        </div>
+        <form action="/decks/<%=cardID%>?_method=PUT" method="POST">
+          <strong> Preview </strong>
+          <div class="front">
+            <div class="fc-header"><strong>Front</strong></div>
+            <input type="text" name="frontEdit" value="" />
+          </div>
+          <div class="back">
+            <div class="fc-header"><strong> Back </strong></div>
+            <input type="text" name="backEdit" value="" />
+          </div>
+          <button type="submit">Save Changes</button>
+        </form>
       </section>
     </div>
   </body>

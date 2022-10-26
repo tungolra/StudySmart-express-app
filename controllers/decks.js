@@ -3,10 +3,12 @@ const User = require("../models/user");
 
 function index(req, res) {
   let decks = req.user.decks;
-  console.log(decks);
   let allCards = decks.reduce((acc, deck) => {
-    let newDeck = deck.flashcards.map(card => ({flashcard: card, deckName: deck.name}))
-    return [...acc, ...newDeck]  
+    let newDeck = deck.flashcards.map((card) => ({
+      flashcard: card,
+      deckName: deck.name,
+    }));
+    return [...acc, ...newDeck];
   }, []);
   res.render("decks/index", { decks, allCards });
 }
@@ -14,26 +16,49 @@ function newDeck(req, res) {
   res.render("decks/new-deck");
 }
 function create(req, res) {
-  User.find(req.user, function (err, user) {
+  req.user.decks.push(req.body);
+  req.user.save(function (err) {
     if (err) return res.send(err.message);
-    req.user.decks.push(req.body);
-    req.user.save(function (err) {
-      if (err) return res.send(err.message);
-      res.redirect("/summary");
-    });
+    res.redirect("/summary");
   });
 }
 function show(req, res) {
-  //find by ID
-  let deck = req.params.id;
-  res.render("decks/show-deck", { deck });
+  //pass in deck for deck name h1
+  // findbyid
+  let deckID = req.params.id;
+  let deck = req.user.decks.find((deck) => {
+    if (deck._id == req.params.id) {
+      return true;
+    }
+  });
+  res.render("decks/show-deck", { deckID, deck });
 }
 function updateDeck(req, res) {
   // pass in deck for input value field
-res.render("decks/edit")
+  let deckID = req.params.id;
+  let deck = req.user.decks.find((deck) => {
+    if (deck._id == req.params.id) {
+      return true;
+    }
+  });
+  res.render("decks/edit", { deckID, deck });
 }
-function deleteDeck (req, res){
-
+function edit(req, res) {
+  let idx = req.user.decks.findIndex((deck) => deck._id == req.params.id);
+  // console.log(req.user.decks[idx]);
+  req.user.decks[idx].name = req.body.editName;
+  req.user.save(function (err) {
+    if (err) return res.send(err.message);
+    res.redirect("/summary");
+  });
+}
+function deleteDeck(req, res) {
+  let idx = req.user.decks.findIndex((deck) => deck._id == req.params.id);
+  req.user.decks.splice(idx, 1);
+  req.user.save(function (err) {
+    if (err) return res.send(err.message);
+    res.redirect("/summary");
+  });
 }
 
 module.exports = {
@@ -42,5 +67,6 @@ module.exports = {
   create,
   show,
   updateDeck,
-  deleteDeck
+  edit,
+  deleteDeck,
 };

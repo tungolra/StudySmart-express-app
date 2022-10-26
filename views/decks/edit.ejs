@@ -21,22 +21,24 @@
           ><span class="material-symbols-outlined"> empty_dashboard </span></a
         >
         <h1>Edit</h1>
-        
+
         <a href="/"><span class="material-symbols-outlined"> logout </span></a>
       </nav>
     </header>
-    <h2>Deck Name</h2>
+    <h2><%=deck.name%></h2>
 
     <h3>Edit Name</h3>
-    <form action="">
-      <input type="text" value="">
+    <form action="/decks/<%=deckID%>?_method=PUT" method="POST">
+      <input type="text" name="editName" value="<%=deck.name%>" />
+      <button type="submit">Save</button>
     </form>
 
     <!-- delete button here  -->
-    <h3> Delete Deck</h3>
-    <form action="" method="">
-      <button type="submit"><span class="material-symbols-outlined"> delete </span></button>
+    <h3>Delete Deck</h3>
+    <form action="/decks/<%=deckID%>?_method=DELETE" method="POST">
+      <button type="submit">
+        <span class="material-symbols-outlined"> delete </span>
+      </button>
     </form>
-
   </body>
 </html>
