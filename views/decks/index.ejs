@@ -67,7 +67,7 @@
         <tbody>
           <tr>
             <th><%= card.flashcard.front %></th>
-            <th><%= card.flashcard.due %></th>
+            <th><%= card.flashcard.due.toString().slice(0, 21) %></th>
             <th><%= card.deckName %></th>
             <th>
               <a

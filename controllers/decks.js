@@ -24,8 +24,7 @@ function create(req, res) {
   });
 }
 function show(req, res) {
-  //pass in deck for deck name h1
-  // findbyid
+
   let deckID = req.params.id;
   let deck = req.user.decks.find((deck) => {
     if (deck._id == req.params.id) {
@@ -35,7 +34,6 @@ function show(req, res) {
   res.render("decks/show-deck", { deckID, deck });
 }
 function updateDeck(req, res) {
-  // pass in deck for input value field
   let deck = req.user.decks.find((deck) => {
     if (deck._id == req.params.id) {
       return true;

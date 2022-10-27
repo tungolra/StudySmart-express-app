@@ -18,7 +18,7 @@
         ><span class="material-symbols-outlined"> arrow_back_ios </span
         ><span class="material-symbols-outlined"> home </span></a
       >
-      <h1>Placeholder</h1>
+      <h1>Hi, <%=userName%>!</h1>
 
       <a href="/"><span class="material-symbols-outlined"> logout </span></a>
     </nav>
@@ -53,12 +53,13 @@
           <tr>
             <td><a href="/decks/<%=d._id%>/edit"> <span class="material-symbols-outlined"> edit </span></a></td>
             <td><a href="decks/<%=d._id%>"><%= d.name %></a></td>
-            <td>#%></td>
-            <td><a href=""> <%=d.flashcards.length%></a></td>
+            <td>#</td>
+            <td><%=d.flashcards.length%></td>
           </tr>
           <% }); %>
         </tbody>
       </table>
     </div>
+
   </body>
 </html>

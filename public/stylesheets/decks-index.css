@@ -2,9 +2,7 @@
   box-sizing: border-box;
   margin: 0px;
 }
-body {
-  background-color: rgb(216, 216, 248);
-}
+
 header {
   display: flex;
 }
@@ -15,11 +13,8 @@ nav {
   justify-content: space-between;
   padding: 10px 5px;
   align-items: center;
-  background: linear-gradient(
-    to bottom left,
-    rgb(152, 152, 246) 50%,
-    rgb(222, 221, 255) 50%
-  );
+  background-color: rgb(216, 216, 248);
+
 }
 body {
 
@@ -38,18 +33,20 @@ ul > li > ul > li {
 }
 
 .display-container {
+  display: flex;
   width: 100vw;
   border: 3px solid gold;
 }
+
 .preview-container {
   border: 3px solid pink;
   text-align: center;
-
 }
+
 .fc-header{ 
   border-bottom: 1px solid black;
-
 }
+
 .front { 
   border: 3px solid red;
 }

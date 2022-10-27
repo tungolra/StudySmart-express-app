@@ -2,11 +2,10 @@ const User = require("../models/user");
 
 
 function summary(req, res) {
-  User.findById(req.params.id, function (err, user) {
-    if (err) return res.send(err.message);
+  let userName = req.user.name.split(" ")[0]
     let decks = req.user.decks;
-    res.render("summary/summary.ejs", { decks });
-  });
+    res.render("summary/summary.ejs", { decks, userName });
+
 }
 
 module.exports = {

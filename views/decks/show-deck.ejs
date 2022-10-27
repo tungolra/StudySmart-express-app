@@ -77,5 +77,45 @@
         <div class="easy"><button type="submit">Easy</button></div>
       </div>
     </main>
+    <script>
+      async function getData(deckID) {
+        try {
+          const endpoint = "/api/flashcards/"+deckID;
+          // let flashcards = await fetch(endpoint).then((res) => res.json());
+          let flashcards = fetch(endpoint).then((res) =>
+          res.json().then(data => {console.log(data)})
+          );
+          // console.log(flashcards);
+        } catch(err) {
+          console.log("hi", err);
+        }
+      }
+            var s = <%- JSON.stringify(deckID) %>
+            console.log(s);
+            getData(s)
+
+// STEP 1
+      // event listener for study now button
+      // event listener for show answer 
+      //event listener for option buttons
+    // have global counter
+    // function show card at index 0 of due cards
+      //onclick of options buttons:
+         // increment counter until it is longer than due array, then set back to 0 
+         // show next card in array
+         // call render function
+
+      // build render function
+
+// STEP 2: 
+  // logic for update functionality - changing due values
+  
+//STEP 3: 
+    // adding logic for what happens when i hit the end of the array
+
+
+
+
+    </script>
   </body>
 </html>
