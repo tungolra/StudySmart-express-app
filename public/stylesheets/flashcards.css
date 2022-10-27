@@ -21,39 +21,43 @@ nav {
     rgb(222, 221, 255) 50%
   );
 }
-/* .show-container {
-} */
+.show-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
 .front-container {
 
-  margin: 10px 5px;
-  padding: 5px;
+  margin: 10px 15px;
+  padding: 15px;
   height: auto;
-
+  width: 80vw;
   border-radius: 10px;
   background-color: rgba(240, 248, 255, 0.753);
 }
 .back-container {
 
-  margin: 0 5px;
-  padding: 5px;
+  margin: 10px 15px;
+  padding: 15px;
   height: auto;
+  width: 80vw;
   margin-bottom: 10px;
   border-radius: 10px;
   background-color: rgba(240, 248, 255, 0.753);
 }
-.options-container {
-  display: flex;
-}
 
 .reveal {
   display: flex;
-
 }
+
 .post-reveal {
   display: flex;
   flex-direction: row;
 }
 button {
+  margin: 10px;
+  padding: 3px;
   border-radius: 5px;
 }
 

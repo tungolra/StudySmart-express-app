@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="/stylesheets/summary.css" />
     <link rel="stylesheet" href="/stylesheets/flashcards.css" />
     <script defer src="../javascripts/script.js"></script>
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
+    ></script>
     <title>Document</title>
   </head>
   <body>
@@ -36,7 +41,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>#</td>
+            <td class="cards-due"></td>
           </tr>
         </tbody>
       </table>
@@ -45,29 +50,22 @@
     <div class="finished" style="display: none">
       You've finished your cards for this deck!
     </div>
-    <main>
-      <div class="show-container">
-        <!-- takes first card in queue -->
-        <div class="front-container" style="display: none"></div>
-        <!-- back container display set to none -->
-      </div>
-    </main>
-    <main>
+    <div class="show-container">
+      <div class="front-container" style="display: none"></div>
       <div class="back-container" style="display: none"></div>
       <div class="post-reveal" style="display: none">
-        <!-- onclick should trigger function to resort card in queue -->
         <div class="again post"><button type="submit">Again</button></div>
         <div class="hard post"><button type="submit">Hard</button></div>
         <div class="good post"><button type="submit">Good</button></div>
         <div class="easy post"><button type="submit">Easy</button></div>
       </div>
-      <div class="options-container">
-        <div class="reveal" style="display: none">
-          <button>Show Answer</button>
-        </div>
+
+      <div class="reveal" style="display: none">
+        <button>Reveal</button>
       </div>
-    </main>
+    </div>
     <script>
+      // import axios from 'axios'
       // constants
 
       //states
@@ -82,6 +80,7 @@
       const backContainer = document.querySelector(".back-container")
       const displayContainer = document.querySelector(".display-container")
       const finished = document.querySelector(".finished")
+      const showContainer = document.querySelector(".show-container")
 
       async function getData(deckID) {
         let cards;
@@ -93,7 +92,7 @@
               // console.log(data)
             cards = data.deck.flashcards
             //render functionality
-              showCard()
+              document.querySelector(".cards-due").textContent = cards.length
             studyNow.addEventListener("click", function (){
               if (frontContainer.style.display === "none"){
                 frontContainer.style.display = "flex"
@@ -115,16 +114,30 @@
 
                 difficultyBtns[i].addEventListener("click", function(){
                   if (difficultyBtns[i].classList.contains("again")){
+                    //10min from now
+                    async function update(){
+                      // let response = await fetch(`/api/decks/${deckID}/flashcards/${cards[counter]._id}`)
+                      await axios.put(`/api/decks/${deckID}/flashcards/${cards[counter]._id}`, {data: "hello"})
+                      // cards[counter].due =
+                    }
+                    update()
+
                   }
                   if (difficultyBtns[i].classList.contains("hard")){
+                    //1 day from now
+
                   }
                   if (difficultyBtns[i].classList.contains("good")){
+                    // 3 days from now
+
                   }
                   if (difficultyBtns[i].classList.contains("easy")){
+                    //7 days from now
+
                   }
                   if (counter < cards.length-1){
                     counter++
-                    frontContainer.textContent = cards[counter].front 
+                    frontContainer.textContent = cards[counter].front
                     backContainer.style.display = "none"
                     showAnswer.style.display = "flex"
                     postReveal.style.display = "none"
@@ -132,6 +145,7 @@
                   } else {
                     displayContainer.style.display = "flex"
                     finished.style.display = "flex"
+                    showContainer.style.display = "none"
                   }
                 })
               }
