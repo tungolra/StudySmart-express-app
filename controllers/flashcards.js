@@ -9,7 +9,6 @@ function newCard(req, res) {
 function create(req, res) {
   let deckID = req.params.id;
   let deckIdx = req.user.decks.findIndex((deck) => deck._id == deckID);
-  console.log(deckIdx);
   req.user.decks[deckIdx].flashcards.push(req.body);
   req.user.save(function (err) {
     if (err) return res.send(err.message);

@@ -9,6 +9,8 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <link rel="stylesheet" href="/stylesheets/summary.css" />
+    <link rel="stylesheet" href="/stylesheets/flashcards.css" />
+    <script defer src="../javascripts/script.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -42,5 +44,38 @@
         ><button class="show-deck-btns">Study Now</button></a
       >
     </div>
+    <main>
+      <div class="show-container">
+        <!-- takes first card in queue -->
+        <div class="front-container">
+          Question: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Excepturi laboriosam debitis harum similique voluptate dolores autem
+          eveniet quas rerum veritatis tenetur iure nobis, non consequuntur
+          sequi provident sit quod praesentium.
+        </div>
+        <!-- back container display set to none -->
+
+        <div class="options-container">
+          <div class="tags"></div>
+          <!-- onclick, sets post-reveal display to flex and reveal to none -->
+          <div class="reveal"><button>Show Answer</button></div>
+        </div>
+      </div>
+    </main>
+    <main>
+      <div class="back-container">
+        Answer: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+        unde fuga saepe possimus repellendus earum iure eos nobis ullam,
+        necessitatibus totam. Eveniet autem non temporibus labore soluta nam
+        natus perferendis?
+      </div>
+      <div class="post-reveal">
+        <!-- onclick should trigger function to resort card in queue -->
+        <div class="again"><button type="submit">Again</button></div>
+        <div class="hard"><button type="submit">Hard</button></div>
+        <div class="good"><button type="submit">Good</button></div>
+        <div class="easy"><button type="submit">Easy</button></div>
+      </div>
+    </main>
   </body>
 </html>

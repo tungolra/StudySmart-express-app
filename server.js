@@ -38,6 +38,7 @@ app.use("/", require("./routes/users"));
 app.use("/summary", require("./routes/summaries"));
 app.use("/decks", require("./routes/decks"));
 app.use("/", require("./routes/flashcards"))
+app.use("/", require("./routes/api/flashcards"))
 
 
 // catch 404 and forward to error handler

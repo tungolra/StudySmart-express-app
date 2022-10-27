@@ -44,16 +44,10 @@ nav {
 .options-container {
   display: flex;
 }
-/* .reveal::before { 
-
-}
-.post-reveal::after {
-
-} */
 
 .reveal {
   display: flex;
-  flex-direction: row;
+
 }
 .post-reveal {
   display: flex;
@@ -62,6 +56,4 @@ nav {
 button {
   border-radius: 5px;
 }
-.edit {
-  align-self: flex-end;
-}
+
