@@ -7,7 +7,6 @@ async function getData(deckID) {
     let flashcards = await fetch(endpoint).then((res) =>
       console.log(res.text())
     );
-    // console.log(flashcards);
   } catch (err) {
     console.log(err);
   }

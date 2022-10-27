@@ -12,7 +12,6 @@ function index(req, res) {
   let modelQuery = req.query.name
     ? { name: new RegExp(req.query.name, "i") }
     : {};
-    console.log(modelQuery)
   let sortKey = req.query.sort || "name";
   User.find(modelQuery).exec(function (err, users) {
     if (err) return next(err);

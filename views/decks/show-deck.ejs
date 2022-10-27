@@ -85,13 +85,11 @@
           let flashcards = fetch(endpoint).then((res) =>
           res.json().then(data => {console.log(data)})
           );
-          // console.log(flashcards);
         } catch(err) {
-          console.log("hi", err);
+          console.log(err);
         }
       }
             var s = <%- JSON.stringify(deckID) %>
-            console.log(s);
             getData(s)
 
 // STEP 1

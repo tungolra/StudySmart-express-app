@@ -39,12 +39,10 @@ function updateDeck(req, res) {
       return true;
     }
   });
-  console.log(deck);
   res.render("decks/edit", { deck });
 }
 function edit(req, res) {
   let idx = req.user.decks.findIndex((deck) => deck._id == req.params.id);
-  // console.log(req.user.decks[idx]);
   req.user.decks[idx].name = req.body.editName;
   req.user.save(function (err) {
     if (err) return res.send(err.message);
