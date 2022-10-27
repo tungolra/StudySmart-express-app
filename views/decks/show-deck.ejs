@@ -42,12 +42,14 @@
       </table>
       <button class="study-now-btn">Study Now</button>
     </div>
+    <div class="finished" style="display: none">
+      You've finished your cards for this deck!
+    </div>
     <main>
       <div class="show-container">
         <!-- takes first card in queue -->
         <div class="front-container" style="display: none"></div>
         <!-- back container display set to none -->
-
       </div>
     </main>
     <main>
@@ -60,7 +62,9 @@
         <div class="easy post"><button type="submit">Easy</button></div>
       </div>
       <div class="options-container">
-        <div class="reveal" style="display: none"><button>Show Answer</button></div>
+        <div class="reveal" style="display: none">
+          <button>Show Answer</button>
+        </div>
       </div>
     </main>
     <script>
@@ -77,6 +81,7 @@
       const frontContainer = document.querySelector(".front-container")
       const backContainer = document.querySelector(".back-container")
       const displayContainer = document.querySelector(".display-container")
+      const finished = document.querySelector(".finished")
 
       async function getData(deckID) {
         let cards;
@@ -99,7 +104,6 @@
               backContainer.textContent = cards.dueCards[counter]
             })
             showAnswer.addEventListener("click", function (){
-              console.log("clicked")
               if (postReveal.style.display === "none" && backContainer.style.display === "none"){
                 postReveal.style.display = "flex"
                 backContainer.style.display = "flex"
@@ -108,8 +112,20 @@
             })
 
             for (let i = 0; i < difficultyBtns.length; i++) {
-
-              } 
+                difficultyBtns[i].addEventListener("click", function(){
+                  if (counter < cards.dueCards.length-1){
+                    counter++
+                    frontContainer.textContent = cards.dueCards[counter] // getting [object Object]
+                    backContainer.style.display = "none"
+                    showAnswer.style.display = "flex"
+                    postReveal.style.display = "none"
+                    backContainer.textContent = cards.dueCards[counter]
+                  } else {
+                    displayContainer.style.display = "flex"
+                    finished.style.display = "flex"
+                  }
+                })
+              }
             })
           );
         } catch (err) {
