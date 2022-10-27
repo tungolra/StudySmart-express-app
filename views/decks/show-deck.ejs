@@ -45,14 +45,9 @@
     <main>
       <div class="show-container">
         <!-- takes first card in queue -->
-        <div class="front-container"></div>
+        <div class="front-container" style="display: none"></div>
         <!-- back container display set to none -->
 
-        <div class="options-container">
-          <div class="tags"></div>
-          <!-- onclick, sets post-reveal display to flex and reveal to none -->
-          <div class="reveal"><button>Show Answer</button></div>
-        </div>
       </div>
     </main>
     <main>
@@ -64,10 +59,15 @@
         <div class="good post"><button type="submit">Good</button></div>
         <div class="easy post"><button type="submit">Easy</button></div>
       </div>
+      <div class="options-container">
+        <div class="reveal" style="display: none"><button>Show Answer</button></div>
+      </div>
     </main>
     <script>
       // constants
 
+      //states
+      let counter = 0
       // event listeners
 
       const studyNow = document.querySelector(".study-now-btn")
@@ -76,6 +76,7 @@
       const difficultyBtns = document.getElementsByClassName("post")
       const frontContainer = document.querySelector(".front-container")
       const backContainer = document.querySelector(".back-container")
+      const displayContainer = document.querySelector(".display-container")
 
       async function getData(deckID) {
         let cards;
@@ -87,17 +88,28 @@
               // console.log(data)
             cards = data;
             //render functionality
-            
+              showCard()
             studyNow.addEventListener("click", function (){
+              if (frontContainer.style.display === "none"){
+                frontContainer.style.display = "flex"
+                displayContainer.style.display = "none"
+                showAnswer.style.display = "flex"
+              }
+              frontContainer.textContent = cards.dueCards[counter] // getting [object Object]
+              backContainer.textContent = cards.dueCards[counter]
+            })
+            showAnswer.addEventListener("click", function (){
               console.log("clicked")
-              if (postReveal.style.display === "none"){
+              if (postReveal.style.display === "none" && backContainer.style.display === "none"){
                 postReveal.style.display = "flex"
                 backContainer.style.display = "flex"
-              } else {
-                postReveal.style.display = "none"
+                showAnswer.style.display = "none"
               }
-              frontContainer.textContent = cards.dueCards
             })
+
+            for (let i = 0; i < difficultyBtns.length; i++) {
+
+              } 
             })
           );
         } catch (err) {
@@ -111,12 +123,17 @@
       getData(s);
 
 
+
+
       // STEP 1
-      // event listener for study now button
-      // event listener for show answer
-      //event listener for option buttons
-      // have global counter
       // function show card at index 0 of due cards
+      function showCard(){
+
+      }
+      function showBack(){
+
+      }
+      function updateCard(){}
       //onclick of options buttons:
       // increment counter until it is longer than due array, then set back to 0
       // show next card in array
