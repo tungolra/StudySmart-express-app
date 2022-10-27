@@ -40,19 +40,12 @@
           </tr>
         </tbody>
       </table>
-      <a href="/decks/<%=deckID%>/flashcards/"
-        ><button class="show-deck-btns">Study Now</button></a
-      >
+      <button class="study-now-btn">Study Now</button>
     </div>
     <main>
       <div class="show-container">
         <!-- takes first card in queue -->
-        <div class="front-container">
-          Question: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Excepturi laboriosam debitis harum similique voluptate dolores autem
-          eveniet quas rerum veritatis tenetur iure nobis, non consequuntur
-          sequi provident sit quod praesentium.
-        </div>
+        <div class="front-container"></div>
         <!-- back container display set to none -->
 
         <div class="options-container">
@@ -63,57 +56,79 @@
       </div>
     </main>
     <main>
-      <div class="back-container">
-        Answer: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-        unde fuga saepe possimus repellendus earum iure eos nobis ullam,
-        necessitatibus totam. Eveniet autem non temporibus labore soluta nam
-        natus perferendis?
-      </div>
-      <div class="post-reveal">
+      <div class="back-container" style="display: none"></div>
+      <div class="post-reveal" style="display: none">
         <!-- onclick should trigger function to resort card in queue -->
-        <div class="again"><button type="submit">Again</button></div>
-        <div class="hard"><button type="submit">Hard</button></div>
-        <div class="good"><button type="submit">Good</button></div>
-        <div class="easy"><button type="submit">Easy</button></div>
+        <div class="again post"><button type="submit">Again</button></div>
+        <div class="hard post"><button type="submit">Hard</button></div>
+        <div class="good post"><button type="submit">Good</button></div>
+        <div class="easy post"><button type="submit">Easy</button></div>
       </div>
     </main>
     <script>
+      // constants
+
+      // event listeners
+
+      const studyNow = document.querySelector(".study-now-btn")
+      const showAnswer = document.querySelector(".reveal")
+      const postReveal = document.querySelector(".post-reveal")
+      const difficultyBtns = document.getElementsByClassName("post")
+      const frontContainer = document.querySelector(".front-container")
+      const backContainer = document.querySelector(".back-container")
+
       async function getData(deckID) {
+        let cards;
         try {
-          const endpoint = "/api/flashcards/"+deckID;
+          const endpoint = "/api/flashcards/" + deckID;
           // let flashcards = await fetch(endpoint).then((res) => res.json());
-          let flashcards = fetch(endpoint).then((res) =>
-          res.json().then(data => {console.log(data)})
+          let flashcards = await fetch(endpoint).then((res) =>
+            res.json().then((data) => {
+              // console.log(data)
+            cards = data;
+            //render functionality
+            
+            studyNow.addEventListener("click", function (){
+              console.log("clicked")
+              if (postReveal.style.display === "none"){
+                postReveal.style.display = "flex"
+                backContainer.style.display = "flex"
+              } else {
+                postReveal.style.display = "none"
+              }
+              frontContainer.textContent = cards.dueCards
+            })
+            })
           );
-        } catch(err) {
+        } catch (err) {
           console.log(err);
         }
-      }
-            var s = <%- JSON.stringify(deckID) %>
-            getData(s)
 
-// STEP 1
+
+        console.log(cards);
+      }
+      var s = <%- JSON.stringify(deckID); %>
+      getData(s);
+
+
+      // STEP 1
       // event listener for study now button
-      // event listener for show answer 
+      // event listener for show answer
       //event listener for option buttons
-    // have global counter
-    // function show card at index 0 of due cards
+      // have global counter
+      // function show card at index 0 of due cards
       //onclick of options buttons:
-         // increment counter until it is longer than due array, then set back to 0 
-         // show next card in array
-         // call render function
+      // increment counter until it is longer than due array, then set back to 0
+      // show next card in array
+      // call render function
 
       // build render function
 
-// STEP 2: 
-  // logic for update functionality - changing due values
-  
-//STEP 3: 
-    // adding logic for what happens when i hit the end of the array
+      // STEP 2:
+      // logic for update functionality - changing due values
 
-
-
-
+      //STEP 3:
+      // adding logic for what happens when i hit the end of the array
     </script>
   </body>
 </html>

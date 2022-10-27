@@ -8,7 +8,6 @@ function showCard(req, res) {
   let dueCards = [];
   decks.forEach((deck) => {
     deck.flashcards.forEach((card) => {
-      console.log(card.status);
       if (card.status === "Due") {
         dueCards.push(card);
       }
