@@ -91,7 +91,7 @@
           let flashcards = await fetch(endpoint).then((res) =>
             res.json().then((data) => {
               // console.log(data)
-            cards = data;
+            cards = data.deck.flashcards
             //render functionality
               showCard()
             studyNow.addEventListener("click", function (){
@@ -100,8 +100,8 @@
                 displayContainer.style.display = "none"
                 showAnswer.style.display = "flex"
               }
-              frontContainer.textContent = cards.dueCards[counter] // getting [object Object]
-              backContainer.textContent = cards.dueCards[counter]
+              frontContainer.textContent = cards[counter].front
+              backContainer.textContent = cards[counter].back
             })
             showAnswer.addEventListener("click", function (){
               if (postReveal.style.display === "none" && backContainer.style.display === "none"){
@@ -112,14 +112,23 @@
             })
 
             for (let i = 0; i < difficultyBtns.length; i++) {
+
                 difficultyBtns[i].addEventListener("click", function(){
-                  if (counter < cards.dueCards.length-1){
+                  if (difficultyBtns[i].classList.contains("again")){
+                  }
+                  if (difficultyBtns[i].classList.contains("hard")){
+                  }
+                  if (difficultyBtns[i].classList.contains("good")){
+                  }
+                  if (difficultyBtns[i].classList.contains("easy")){
+                  }
+                  if (counter < cards.length-1){
                     counter++
-                    frontContainer.textContent = cards.dueCards[counter] // getting [object Object]
+                    frontContainer.textContent = cards[counter].front 
                     backContainer.style.display = "none"
                     showAnswer.style.display = "flex"
                     postReveal.style.display = "none"
-                    backContainer.textContent = cards.dueCards[counter]
+                    backContainer.textContent = cards[counter].back
                   } else {
                     displayContainer.style.display = "flex"
                     finished.style.display = "flex"
@@ -133,7 +142,6 @@
         }
 
 
-        console.log(cards);
       }
       var s = <%- JSON.stringify(deckID); %>
       getData(s);
