@@ -155,12 +155,12 @@ button {
   justify-content: center;
   padding: 10px;
 }
-.form-container > form { 
+.form-container > form {
   border: 1px solid black;
-    border-radius: 10px;
-    padding: 20px;
-    border: 2px solid rgb(87, 173, 249);
-    background-color: rgba(240, 248, 255);
+  border-radius: 10px;
+  padding: 20px;
+  border: 2px solid rgb(87, 173, 249);
+  background-color: rgba(240, 248, 255);
 }
 .form-container > form > div > label {
   margin-right: 10px;
@@ -263,28 +263,24 @@ h2 {
   border-radius: 10px;
   color: rgba(0, 0, 0, 0.62);
 }
-.edit-container > div > form > button {
-}
 /* edit deck page end */
+
 /* tablet styles */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
-}
-
-/* desktop styles */
-@media only screen and (min-width: 961px) {
   .page-text {
     margin: 50px;
   }
   .page-text > h2 {
     margin-bottom: 10px;
   }
-
+  .show-container {
+    align-items: center;
+  }
   .display-container {
     display: flex;
     width: 90vw;
     margin: 0 20px;
-
-
+    align-items: center;
   }
   .options-container {
     justify-content: space-around;
@@ -298,10 +294,10 @@ h2 {
   .form-container > form > input {
     padding: 10px;
   }
-  table { 
+  table {
     width: 40vw;
   }
-  .display-container > button { 
+  .display-container > button {
     justify-content: center;
     width: 100px;
     padding: 3px;
@@ -309,10 +305,64 @@ h2 {
   .show-container {
     flex-direction: column;
   }
-  .front-container, .back-container { 
+  .front-container,
+  .back-container {
     width: 50vw;
   }
-  .finished { 
+  .finished {
+    border: 2px solid rgb(87, 173, 249);
+    background-color: rgba(240, 248, 255);
+    padding: 5px;
+    width: 200px;
+    justify-content: center;
+  }
+}
+
+/* desktop styles */
+@media only screen and (min-width: 961px) {
+  .page-text {
+    margin: 50px;
+  }
+  .page-text > h2 {
+    margin-bottom: 10px;
+  }
+  .show-container {
+    align-items: center;
+  }
+  .display-container {
+    display: flex;
+    width: 90vw;
+    margin: 0 20px;
+    align-items: center;
+  }
+  .options-container {
+    justify-content: space-around;
+  }
+  table {
+    width: 70vw;
+    text-align: center;
+    margin: auto;
+  }
+
+  .form-container > form > input {
+    padding: 10px;
+  }
+  table {
+    width: 40vw;
+  }
+  .display-container > button {
+    justify-content: center;
+    width: 100px;
+    padding: 3px;
+  }
+  .show-container {
+    flex-direction: column;
+  }
+  .front-container,
+  .back-container {
+    width: 50vw;
+  }
+  .finished {
     border: 2px solid rgb(87, 173, 249);
     background-color: rgba(240, 248, 255);
     padding: 5px;
