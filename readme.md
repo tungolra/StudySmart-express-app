@@ -1,8 +1,11 @@
 # StudySmart
 
-### [ERD](https://lucid.app/lucidchart/e1d23b75-c25d-4681-91cd-c31ec40cab05/edit?beaconFlowId=408F2C67D29B6685&invitationId=inv_f7ef3cbb-b87a-4de1-9773-822efb27bdd5&page=0_0#)
 
-## General Overview
+
+### About the Project
+
+This project was completed in 7 days. It is a flashcard system that allows users to recreate this popular studying method online. It follows the learning strategy of spaced repetition in which learners recall newly learned information in the space of 1, 3, and 7 days. This application allows the user to go through each of their custom-made flashcards dynamically through a single-page application (SPA). After completion of each card, the user decides whether the card was "Hard", "Good", or "Easy", which will then reinsert the card into a specific place in the queue. Or, the user can choose "Again" for the card to be available after 15 minutes. 
+
 
 ### Home Page
 
@@ -62,9 +65,6 @@ The edit icon will allow the client to edit any flashcard that they have created
 
 <img src="https://i.imgur.com/C0WK9S1.png">
 
-### About the Project
-
-This project was completed in 7 days. It is a flashcard system that allows users to recreate this popular studying method online. It follows the principles of spaced repetition
 
 ### Technologies
 
@@ -87,6 +87,8 @@ CSS
 - Should be able to hit a "Hint" button to display pop-up on page
 - Have a public vs private database - public decks can be shared and copied into a user's account
 - AAU, I'd want a prompt to confirm any updates/deletes when selecting button
+
+### [ERD](https://lucid.app/lucidchart/e1d23b75-c25d-4681-91cd-c31ec40cab05/edit?beaconFlowId=408F2C67D29B6685&invitationId=inv_f7ef3cbb-b87a-4de1-9773-822efb27bdd5&page=0_0#)
 
 ### Contact
 
