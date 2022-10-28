@@ -4,44 +4,59 @@
 ## General Overview
 
 ### Home Page
-<img src="https://i.imgur.com/4dxQK0h.png">
+This is the landing page with a brief (currently gibberish) Welcome and About section. 
+<img src="https://i.imgur.com/ty9v1os.png">
 
 ### Login Page
-<img src="https://i.imgur.com/gBVxAY3.png">
+Google Authenticate allows you to log-in or create an account.
+<img src="https://i.imgur.com/kdB0rkS.png">
 
 ### Summary Page
-<img src="https://i.imgur.com/oo1Ur2p.png">
+Once logged in, the client is redirected to their summary page of all their decks and cards that are due to be studied for those decks. Clicking on an individual deck name will lead you to a page to begin a flashcards study session. 
 
-### Deck Page
-When logged in, the home page will display your summary of saved Decks, Flashcards that are due for each deck, and a nav bar that allows you to create a deck, log out, or browse your database of deck and cards
+On this page, you can create a deck or enter your database of all your flashcards for each deck. (Filtering functionality coming soon.)
+<img src="https://i.imgur.com/qlTOdFG.png">
 
-<img src="https://i.imgur.com/CZgQHeK.png">
-
-### Index Page
-<img src="https://i.imgur.com/hcE9dBi.png">
-
+You can also edit the name of each deck with by clicking the edit icon in the table. 
 #### New Deck Display
-<img src="https://i.imgur.com/sHXKzFU.png">
 
-### User Settings Page
-<img src="https://i.imgur.com/7IRgXF2.png">
+<img src="https://i.imgur.com/gYS7ySQ.png">
+
+
+### Deck/Flashcard Page
+Once redirected to a deck under study, you can create cards within that deck by clicking the "Add Card to Deck" button. 
+
+The table again displays the cards that are due. 
+<img src="https://i.imgur.com/XyFQc7I.png">
+
+Clicking "Study Now" uses AJAX functionality to create a Single Page Application which will first show you the front of the card (the question). Then, when the user is ready to check their answer, clicking the "Reveal" button will then display the back of the card as well. 
+<img src="https://i.imgur.com/U1aB9Vh.png">
+
+Lastly, hitting any one of the below buttons will run functionality that determines where to then place the completed in your cue of cards that are due. 
+
+<img src="https://i.imgur.com/eFMEuMT.png">
+After completing your study session (when the number of Due Cards reaches 0), a prompt is displayed which indicates that the user has finished studying their deck!
+
+<img src="https://i.imgur.com/PHEGXl1.png">
+
+Within this page, the client can create a new card for the deck they are currently in. 
 
 ### New Card Page
-<img src="https://i.imgur.com/GVQd7sE.png">
+<img src="https://i.imgur.com/FjwcwzV.png">
+
+### Index Page
+This page shows all the decks and all the cards you have created and placed them inside a table. 
+
+<img src="https://i.imgur.com/oPXKffZ.png">
+
+The edit icon will allow the client to edit any flashcard that they have created. 
 
 ### Edit Card Page
-<img src="https://i.imgur.com/NFxZDYV.png">
-
-### Flashcard Page
-<img src="https://imgur.com/mEwoapm.png">
-
-### Mobile Layouts
-<img src="https://i.imgur.com/9Gvwd45.png">
-<img src="https://i.imgur.com/HDec7zG.png">
-<img src="https://i.imgur.com/jmuuOJC.png">
-### Get Started 
+<img src="https://i.imgur.com/C0WK9S1.png">
 
 ### About the Project
+
+This project was completed in 7 days. It is a flashcard system that allows users to recreate this popular studying method online. It follows the principles of spaced repetition 
 
 ### Technologies
 
