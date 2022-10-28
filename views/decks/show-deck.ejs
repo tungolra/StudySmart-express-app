@@ -8,8 +8,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link rel="stylesheet" href="/stylesheets/summary.css" />
-    <link rel="stylesheet" href="/stylesheets/flashcards.css" />
+    <link rel="stylesheet" href="/stylesheets/index.css" />
     <script defer src="../javascripts/script.js"></script>
 
     <script
@@ -26,7 +25,7 @@
           ><span class="material-symbols-outlined"> empty_dashboard </span></a
         >
         <h1><%=deck.name%></h1>
-        <span class="material-symbols-outlined"> logout </span>
+        <a href="/"><span class="material-symbols-outlined"> logout </span></a>
       </nav>
     </header>
     <div class="display-container">
@@ -113,11 +112,11 @@
                 }
               });
 
+              let status;
               for (let i = 0; i < difficultyBtns.length; i++) {
                 difficultyBtns[i].addEventListener("click", function () {
                   let currentDueDate = cards[counter].due;
                   const newDate = new Date();
-                  let status;
                   if (difficultyBtns[i].classList.contains("again")) {
                     newDate.setMinutes(newDate.getMinutes() + 15);
                     status = "Due";
@@ -164,23 +163,10 @@
       var s = <%- JSON.stringify(deckID); %>
       getData(s);
 
-      // STEP 1
-      // function show card at index 0 of due cards
       function showCard() {}
       function showBack() {}
       function updateCard() {}
-      //onclick of options buttons:
-      // increment counter until it is longer than due array, then set back to 0
-      // show next card in array
-      // call render function
 
-      // build render function
-
-      // STEP 2:
-      // logic for update functionality - changing due values
-
-      //STEP 3:
-      // adding logic for what happens when i hit the end of the array
     </script>
   </body>
 </html>

@@ -1,16 +1,16 @@
 
 
-async function getData(deckID) {
-  try {
-    const endpoint = "/api/flashcards/";
-    // let flashcards = await fetch(endpoint).then((res) => res.json());
-    let flashcards = await fetch(endpoint).then((res) =>
-      console.log(res.text())
-    );
-  } catch (err) {
-    console.log(err);
-  }
-}
+// async function getData(deckID) {
+//   try {
+//     const endpoint = "/api/flashcards/";
+//     // let flashcards = await fetch(endpoint).then((res) => res.json());
+//     let flashcards = await fetch(endpoint).then((res) =>
+//       console.log(res.text())
+//     );
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
 
 //after log-in, run a function that assesses statuses of all flashcards 
 // based on their due date, matching if it is before or after today;

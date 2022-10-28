@@ -32,7 +32,7 @@ ul > li > ul > li {
   padding-left: 10px;
 }
 
-.display-container {
+.display-table {
   display: flex;
   width: 100vw;
   border: 3px solid gold;

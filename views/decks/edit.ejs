@@ -25,7 +25,9 @@
         <a href="/"><span class="material-symbols-outlined"> logout </span></a>
       </nav>
     </header>
-    <h2><%=deck.name%></h2>
+    <div class="deck-name">
+      <h2><%=deck.name%></h2>
+    </div>
 
     <h3>Edit Name</h3>
     <form action="/decks/<%=deck._id%>?_method=PUT" method="POST">
@@ -33,7 +35,7 @@
       <button type="submit">Save</button>
     </form>
 
-    <!-- delete button here  -->
+
     <h3>Delete Deck</h3>
     <form action="/decks/<%=deck._id%>?_method=DELETE" method="POST">
       <button type="submit">

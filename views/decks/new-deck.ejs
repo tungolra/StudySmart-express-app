@@ -8,25 +8,31 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link rel="stylesheet" href="stylesheets/summary.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <title>New Deck</title>
   </head>
   <body>
     <header>
       <nav>
-        <a href="/"
+        <a href="/summary"
           ><span class="material-symbols-outlined"> arrow_back_ios </span
-          ><span class="material-symbols-outlined"> home </span></a
+          ><span class="material-symbols-outlined"> empty_dashboard </span></a
         >
         <h1>New Deck</h1>
 
         <a href="/"><span class="material-symbols-outlined"> logout </span></a>
       </nav>
     </header>
-
-    <form action="/decks/index" method="POST">
-      <input type="text" name="name" />
-      <button type="submit">Save</button>
-    </form>
+    <div class="form-container">
+      <form action="/decks/index" method="POST">
+        <input
+          type="text"
+          name="name"
+          value="Add a new deck!"
+          style="opacity: 0.6"
+        />
+        <button type="submit">Save</button>
+      </form>
+    </div>
   </body>
 </html>

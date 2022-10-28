@@ -3,12 +3,21 @@
   margin: 0;
   padding: 0;
 }
-body {
-    background-color: rgb(216, 216, 248);
-  }
+/* body {
+  background-color: rgb(216, 216, 248);
+} */
+a {
+  text-decoration: none;
+}
 /* header start */
 header {
   display: flex;
+}
+.page-text {
+  margin: 10px;
+}
+.page-text > p {
+  margin-bottom: 10px;
 }
 nav {
   display: flex;
@@ -17,11 +26,7 @@ nav {
   justify-content: space-between;
   padding: 10px 5px;
   align-items: center;
-  background: linear-gradient(
-    to bottom left,
-    rgb(152, 152, 246) 50%,
-    rgb(222, 221, 255) 50%
-  );
+  background-color: rgb(216, 216, 248);
 }
 nav > h1 {
   text-align: center;
@@ -31,27 +36,23 @@ nav > ul > li {
 }
 /* header end */
 
+/* index page start */
 .dropdown:hover .features-menu {
   display: flex;
   flex-direction: column;
   background: #b2d6ff;
   border-radius: 5px;
   padding-top: 60px;
-
   position: absolute;
   top: -25px;
   left: -30px;
   z-index: 1;
 }
+
 .features-menu {
   display: none;
 }
-/* .features-menu li { 
-    border-bottom: 1px solid #FFF;
-}
-.features-menu li:last-of-type { 
-    border-bottom: none;
-} */
+
 .dropdown {
   position: relative;
 }
@@ -60,3 +61,162 @@ nav > ul > li {
   position: relative;
   cursor: pointer;
 }
+/* index page end */
+
+/* summary page / database start */
+
+.display-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 20px 5px;
+  flex-direction: column;
+}
+.options-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.database {
+  width: 75px;
+
+  height: max-content;
+}
+
+table {
+  background-color: lightgray;
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 0 5px;
+  margin-top: 15px;
+}
+thead > tr > th {
+  border-bottom: 1px solid black;
+}
+th,
+td {
+  text-align: center;
+  padding: 5px 0;
+}
+
+button {
+  margin: 10px;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+/* summary page / database end */
+
+/* show-deck page start */
+.show-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.front-container {
+  margin: 10px 15px;
+  padding: 15px;
+  height: auto;
+  width: 80vw;
+  border-radius: 10px;
+  background-color: rgba(240, 248, 255, 0.753);
+}
+.back-container {
+  margin: 10px 15px;
+  padding: 15px;
+  height: auto;
+  width: 80vw;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: rgba(240, 248, 255, 0.753);
+}
+
+.reveal {
+  display: flex;
+}
+
+.post-reveal {
+  display: flex;
+  flex-direction: row;
+}
+/* show-deck page end */
+
+/* new-deck / new-card page start */
+.form-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.form-container > form > div {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+.form-container > form > div > label {
+  margin-right: 10px;
+}
+.form-container > form > div > input {
+  padding: 5px;
+  width: 70vw;
+  height: 50px;
+}
+.deck-name {
+  justify-content: center;
+}
+/* new-deck page / new-card page end */
+
+/* flashcards page start */
+.show-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+.front-container {
+
+  margin: 10px 15px;
+  padding: 15px;
+  height: auto;
+  width: 80vw;
+  border-radius: 10px;
+  background-color: rgba(240, 248, 255);
+  border: 2px solid rgb(87, 173, 249)
+}
+.back-container {
+
+  margin: 10px 15px;
+  padding: 15px;
+  height: auto;
+  width: 80vw;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: rgba(240, 248, 255);
+  border: 2px solid rgb(87, 173, 249)
+}
+
+.reveal {
+  display: flex;
+}
+
+.post-reveal {
+  display: flex;
+  flex-direction: row;
+}
+button {
+  margin: 10px;
+  padding: 3px;
+  border-radius: 5px;
+}
+/* flashcards page end  */
+
+/* edit page start */
+.form-container > form > div > label {
+  margin-right: 10px;
+}
+.form-container > form > div > input {
+  padding: 5px;
+  width: 70vw;
+  height: 50px;
+}
+/* edit page end */
