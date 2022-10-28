@@ -16,10 +16,21 @@ function sendCards(req, res) {
   res.send({ deck, dueCards });
 }
 
-function updateCards(req, res){
-  console.log("hit")
-  console.log(req.body)
+function updateCards(req, res) {
+  let decks = req.user.decks;
+  decks.forEach((deck) => {
+    deck.flashcards.forEach((card) => {
+      if (card.id === req.params.cardID) {
+        card.due = req.body.currentDueDate;
+        card.status = req.body.status;
+      }
+    });
+  });
+  req.user.save(function (err) {
+    if (err) return res.send(err.message);
+  });
 }
+
 //after log-in, run a function that assesses statuses of all flashcards
 // based on their due date, matching if it is before or after today;
 // if before, it is due

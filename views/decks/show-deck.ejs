@@ -69,18 +69,18 @@
       // constants
 
       //states
-      let counter = 0
+      let counter = 0;
       // event listeners
 
-      const studyNow = document.querySelector(".study-now-btn")
-      const showAnswer = document.querySelector(".reveal")
-      const postReveal = document.querySelector(".post-reveal")
-      const difficultyBtns = document.getElementsByClassName("post")
-      const frontContainer = document.querySelector(".front-container")
-      const backContainer = document.querySelector(".back-container")
-      const displayContainer = document.querySelector(".display-container")
-      const finished = document.querySelector(".finished")
-      const showContainer = document.querySelector(".show-container")
+      const studyNow = document.querySelector(".study-now-btn");
+      const showAnswer = document.querySelector(".reveal");
+      const postReveal = document.querySelector(".post-reveal");
+      const difficultyBtns = document.getElementsByClassName("post");
+      const frontContainer = document.querySelector(".front-container");
+      const backContainer = document.querySelector(".back-container");
+      const displayContainer = document.querySelector(".display-container");
+      const finished = document.querySelector(".finished");
+      const showContainer = document.querySelector(".show-container");
 
       async function getData(deckID) {
         let cards;
@@ -90,88 +90,85 @@
           let flashcards = await fetch(endpoint).then((res) =>
             res.json().then((data) => {
               // console.log(data)
-            cards = data.deck.flashcards
-            //render functionality
-              document.querySelector(".cards-due").textContent = cards.length
-            studyNow.addEventListener("click", function (){
-              if (frontContainer.style.display === "none"){
-                frontContainer.style.display = "flex"
-                displayContainer.style.display = "none"
-                showAnswer.style.display = "flex"
-              }
-              frontContainer.textContent = cards[counter].front
-              backContainer.textContent = cards[counter].back
-            })
-            showAnswer.addEventListener("click", function (){
-              if (postReveal.style.display === "none" && backContainer.style.display === "none"){
-                postReveal.style.display = "flex"
-                backContainer.style.display = "flex"
-                showAnswer.style.display = "none"
-              }
-            })
+              cards = data.deck.flashcards;
+              //render functionality
+              document.querySelector(".cards-due").textContent = cards.length;
+              studyNow.addEventListener("click", function () {
+                if (frontContainer.style.display === "none") {
+                  frontContainer.style.display = "flex";
+                  displayContainer.style.display = "none";
+                  showAnswer.style.display = "flex";
+                }
+                frontContainer.textContent = cards[counter].front;
+                backContainer.textContent = cards[counter].back;
+              });
+              showAnswer.addEventListener("click", function () {
+                if (
+                  postReveal.style.display === "none" &&
+                  backContainer.style.display === "none"
+                ) {
+                  postReveal.style.display = "flex";
+                  backContainer.style.display = "flex";
+                  showAnswer.style.display = "none";
+                }
+              });
 
-            for (let i = 0; i < difficultyBtns.length; i++) {
-
-                difficultyBtns[i].addEventListener("click", function(){
-                  if (difficultyBtns[i].classList.contains("again")){
-                    //10min from now
-                    async function update(){
-                      // let response = await fetch(`/api/decks/${deckID}/flashcards/${cards[counter]._id}`)
-                      await axios.put(`/api/decks/${deckID}/flashcards/${cards[counter]._id}`, {data: "hello"})
-                      // cards[counter].due =
-                    }
-                    update()
-
+              for (let i = 0; i < difficultyBtns.length; i++) {
+                difficultyBtns[i].addEventListener("click", function () {
+                  let currentDueDate = cards[counter].due;
+                  const newDate = new Date();
+                  let status;
+                  if (difficultyBtns[i].classList.contains("again")) {
+                    newDate.setMinutes(newDate.getMinutes() + 15);
+                    status = "Due";
                   }
-                  if (difficultyBtns[i].classList.contains("hard")){
-                    //1 day from now
-
+                  if (difficultyBtns[i].classList.contains("hard")) {
+                    newDate.setDate(newDate.getDate() + 1);
+                    status = "Pending";
                   }
-                  if (difficultyBtns[i].classList.contains("good")){
-                    // 3 days from now
-
+                  if (difficultyBtns[i].classList.contains("good")) {
+                    newDate.setDate(newDate.getDate() + 3);
+                    status = "Pending";
                   }
-                  if (difficultyBtns[i].classList.contains("easy")){
-                    //7 days from now
-
+                  if (difficultyBtns[i].classList.contains("easy")) {
+                    newDate.setDate(newDate.getDate() + 7);
+                    status = "Pending";
                   }
-                  if (counter < cards.length-1){
-                    counter++
-                    frontContainer.textContent = cards[counter].front
-                    backContainer.style.display = "none"
-                    showAnswer.style.display = "flex"
-                    postReveal.style.display = "none"
-                    backContainer.textContent = cards[counter].back
+                  async function update() {
+                    await axios.put(
+                      `/api/decks/${deckID}/flashcards/${cards[counter]._id}`,
+                      { currentDueDate: newDate, status: status }
+                    );
+                  }
+                  update();
+                  if (counter < cards.length - 1) {
+                    counter++;
+                    frontContainer.textContent = cards[counter].front;
+                    backContainer.style.display = "none";
+                    showAnswer.style.display = "flex";
+                    postReveal.style.display = "none";
+                    backContainer.textContent = cards[counter].back;
                   } else {
-                    displayContainer.style.display = "flex"
-                    finished.style.display = "flex"
-                    showContainer.style.display = "none"
+                    displayContainer.style.display = "flex";
+                    finished.style.display = "flex";
+                    showContainer.style.display = "none";
                   }
-                })
+                });
               }
             })
           );
         } catch (err) {
           console.log(err);
         }
-
-
       }
       var s = <%- JSON.stringify(deckID); %>
       getData(s);
 
-
-
-
       // STEP 1
       // function show card at index 0 of due cards
-      function showCard(){
-
-      }
-      function showBack(){
-
-      }
-      function updateCard(){}
+      function showCard() {}
+      function showBack() {}
+      function updateCard() {}
       //onclick of options buttons:
       // increment counter until it is longer than due array, then set back to 0
       // show next card in array
