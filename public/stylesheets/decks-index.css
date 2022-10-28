@@ -20,10 +20,10 @@ body {
 
   border: 3px solid orange;
 }
-.sidebar {
+/* .sidebar {
   border: 3px solid black;
   
-}
+} */
 ul { 
   padding: 0;
   list-style-type: none;

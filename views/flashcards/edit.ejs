@@ -27,40 +27,43 @@
     </header>
     <h2><%=deckName%></h2>
     <!-- delete button here  -->
-    <form
-      action="/decks/<%=foundDeck._id%>/flashcards/<%=cardID%>?_method=DELETE"
-      method="POST"
-    >
-      <button type="submit">
-        <span class="material-symbols-outlined"> delete </span>
-      </button>
-    </form>
 
     <!-- preview -->
     <!-- preview flashcard selected in display view-->
     <!-- update form here -->
     <div class="preview-container">
-      <section>
-        <form
-          action="/decks/<%=foundDeck._id%>/flashcards/<%=cardID%>?_method=PUT"
-          method="POST"
-        >
-          <strong> Preview </strong>
-          <div class="front">
-            <div class="fc-header"><strong>Front</strong></div>
-            <input type="text" name="frontEdit" value="<%=fc.front%>" />
-          </div>
-          <div class="back">
-            <div class="fc-header"><strong> Back </strong></div>
-            <input type="text" name="backEdit" value="<%=fc.back%>" />
-          </div>
-          <div class="tags">
-            <label>Tags: </label>
-            <input type="text" name="tagEdit" value="<%=fc.tags%>" />
-          </div>
-          <button type="submit">Save Changes</button>
-        </form>
-      </section>
+      <form
+        action="/decks/<%=foundDeck._id%>/flashcards/<%=cardID%>?_method=PUT"
+        method="POST"
+      >
+        <h3><strong> Card Preview </strong></h3>
+        <div class="fc-header">
+          <h4><strong>Front</strong></h4>
+        </div>
+        <div class="front-container">
+          <input type="text" name="frontEdit" value="<%=fc.front%>" />
+        </div>
+        <div class="fc-header"><strong> Back </strong></div>
+        <div class="back-container">
+          <input type="text" name="backEdit" value="<%=fc.back%>" />
+        </div>
+        <!-- <div class="tags">
+        <label>Tags: </label>
+        <input type="text" name="tagEdit" value="<%=fc.tags%>" />
+      </div> -->
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+    <div class="delete-card">
+      <h3>Delete Card</h3>
+      <form
+        action="/decks/<%=foundDeck._id%>/flashcards/<%=cardID%>?_method=DELETE"
+        method="POST"
+      >
+        <button type="submit">
+          <span class="material-symbols-outlined"> delete </span>
+        </button>
+      </form>
     </div>
   </body>
 </html>

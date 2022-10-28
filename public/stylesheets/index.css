@@ -79,7 +79,6 @@ nav > ul > li {
 }
 .database {
   width: 75px;
-
   height: max-content;
 }
 
@@ -171,20 +170,17 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 .front-container {
-
   margin: 10px 15px;
   padding: 15px;
   height: auto;
   width: 80vw;
   border-radius: 10px;
   background-color: rgba(240, 248, 255);
-  border: 2px solid rgb(87, 173, 249)
+  border: 2px solid rgb(87, 173, 249);
 }
 .back-container {
-
   margin: 10px 15px;
   padding: 15px;
   height: auto;
@@ -192,7 +188,7 @@ button {
   margin-bottom: 10px;
   border-radius: 10px;
   background-color: rgba(240, 248, 255);
-  border: 2px solid rgb(87, 173, 249)
+  border: 2px solid rgb(87, 173, 249);
 }
 
 .reveal {
@@ -210,13 +206,57 @@ button {
 }
 /* flashcards page end  */
 
-/* edit page start */
-.form-container > form > div > label {
-  margin-right: 10px;
+/* edit card page start */
+h2 {
+  text-align: center;
+  margin-top: 10px;
 }
-.form-container > form > div > input {
-  padding: 5px;
+.preview-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.preview-container > form > h3 {
+  margin-bottom: 10px;
+}
+.preview-container > form > .front-container > input,
+.preview-container > form > .back-container > input {
   width: 70vw;
   height: 50px;
+  border: none;
+  padding: 0 5px;
 }
-/* edit page end */
+.delete-card { 
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* edit card page end */
+
+/* edit deck page start */
+.edit-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.edit-container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px 0;
+}
+.edit-container > div > form > input {
+  width: 70vw;
+  height: 50px;
+  border: none;
+  padding: 0 5px;
+  border: 2px solid rgb(87, 173, 249);
+  background-color: rgba(240, 248, 255);
+  border-radius: 10px;
+  color: rgba(0, 0, 0, 0.62);
+}
+.edit-container > div > form > button {
+}
+/* edit deck page end */

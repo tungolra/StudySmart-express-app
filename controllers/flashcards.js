@@ -1,5 +1,4 @@
 const User = require("../models/user");
-// const { newDeck } = require("./decks");
 
 function newCard(req, res) {
   let deckID = req.params.id;
@@ -18,6 +17,7 @@ function create(req, res) {
 function show(req, res) {
   res.render("flashcards/show-card");
 }
+
 function updateCard(req, res) {
   let cardID = req.params.id;
   let deckName = req.query.deckName.replace("%20", " ");
