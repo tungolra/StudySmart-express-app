@@ -227,10 +227,11 @@ h2 {
 }
 .preview-container > form > .front-container > input,
 .preview-container > form > .back-container > input {
-  width: 70vw;
+  width: 40vw;
   height: 50px;
   border: none;
   padding: 0 5px;
+  border-radius: 10px;
 }
 .delete-card {
   display: flex;
