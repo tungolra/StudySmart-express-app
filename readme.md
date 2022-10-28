@@ -1,4 +1,4 @@
-# Placeholder Name: Flashcards
+# StudySmart
 
 ### [ERD](https://lucid.app/lucidchart/e1d23b75-c25d-4681-91cd-c31ec40cab05/edit?beaconFlowId=408F2C67D29B6685&invitationId=inv_f7ef3cbb-b87a-4de1-9773-822efb27bdd5&page=0_0#)
 ## General Overview
@@ -59,7 +59,20 @@ The edit icon will allow the client to edit any flashcard that they have created
 This project was completed in 7 days. It is a flashcard system that allows users to recreate this popular studying method online. It follows the principles of spaced repetition 
 
 ### Technologies
+JavaScript
+Express
+Mongoose
+MongoDB
+AJAX
 
 ### Icebox
+- AAU, I'd want to be able to edit which deck a flashcard belongs in
+- Web API for copy & pasting text that keeps its formatting
+- Web API to show stats of reviewed cards across time
+- Web API to notify user's Google Calendar or other reminders to study
+- Synced to mobile device!
+- Should be able to paste in an image
+- Should be able to hit a "Hint" button to display pop-up on page
+- Have a public vs private database - public decks can be shared and copied into a user's account
+- AAU, I'd want a prompt to confirm any updates/deletes when selecting button
 
-##### Contact
