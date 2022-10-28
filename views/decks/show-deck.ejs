@@ -85,10 +85,8 @@
         let cards;
         try {
           const endpoint = "/api/flashcards/" + deckID;
-          // let flashcards = await fetch(endpoint).then((res) => res.json());
           let flashcards = await fetch(endpoint).then((res) =>
             res.json().then((data) => {
-              // console.log(data)
               cards = data.deck.flashcards;
               //render functionality
               document.querySelector(".cards-due").textContent = cards.length;

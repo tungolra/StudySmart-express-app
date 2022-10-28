@@ -11,7 +11,6 @@ function sendCards(req, res) {
       }
     });
   });
-  console.log(dueCards)
   res.send({ deck, dueCards });
 }
 
