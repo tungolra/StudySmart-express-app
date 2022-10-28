@@ -12,8 +12,6 @@ function summary(req, res) {
         card.status = "Due";
         dueCards.push(card);
       } else if (today < dueDate) {
-        //need to specify here for the again button 
-        // otherwise it'll keep changign statuses back to pending
         card.status = "Pending";
       }
     });

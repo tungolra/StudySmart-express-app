@@ -57,8 +57,10 @@
               >
             </td>
             <td><a href="decks/<%=d._id%>"><%= d.name %></a></td>
-            <!-- needs to show due cards for EACH deck -->
-            <td>#</td>
+            <td>
+              <% counter = 0%> <%d.flashcards.forEach(fc => {%> <% if (fc.status
+              === "Due") { %> <% counter++ } %> <% }); %> <%=counter%>
+            </td>
             <td><%=d.flashcards.length%></td>
           </tr>
           <% }); %>
