@@ -15,7 +15,7 @@
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
     ></script>
-    <title>Document</title>
+    <title>StudySmart: <%=deck.name%></title>
   </head>
   <body>
     <header>
@@ -45,9 +45,9 @@
         </tbody>
       </table>
       <button class="study-now-btn">Study Now</button>
-    </div>
-    <div class="finished" style="display: none">
-      You've finished your cards for this deck!
+      <div class="finished" style="display: none">
+        You've finished your cards for this deck!
+      </div>
     </div>
     <div class="show-container">
       <div class="front-container" style="display: none"></div>
@@ -166,7 +166,6 @@
       function showCard() {}
       function showBack() {}
       function updateCard() {}
-
     </script>
   </body>
 </html>

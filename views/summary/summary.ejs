@@ -10,20 +10,20 @@
     />
     <link rel="stylesheet" href="stylesheets/index.css" />
 
-    <title>Document</title>
+    <title>StudySmart Summary</title>
   </head>
-  <header>
-    <nav>
-      <a href="/"
-        ><span class="material-symbols-outlined"> arrow_back_ios </span
-        ><span class="material-symbols-outlined"> home </span></a
-      >
-      <h1>Hi, <%=userName%>!</h1>
-
-      <a href="/"><span class="material-symbols-outlined"> logout </span></a>
-    </nav>
-  </header>
   <body>
+    <header>
+      <nav>
+        <a href="/"
+          ><span class="material-symbols-outlined"> arrow_back_ios </span
+          ><span class="material-symbols-outlined"> home </span></a
+        >
+        <h1>Hi, <%=userName%>!</h1>
+
+        <a href="/"><span class="material-symbols-outlined"> logout </span></a>
+      </nav>
+    </header>
     <div class="display-container">
       <div class="options-container">
         <a href="decks/new-deck"
@@ -38,7 +38,7 @@
           </button></a
         >
       </div>
-      
+
       <table>
         <thead>
           <tr>
@@ -51,16 +51,19 @@
         <tbody>
           <% decks.forEach(function(d) {%>
           <tr>
-            <td><a href="/decks/<%=d._id%>/edit"> <span class="material-symbols-outlined"> edit </span></a></td>
+            <td>
+              <a href="/decks/<%=d._id%>/edit">
+                <span class="material-symbols-outlined"> edit </span></a
+              >
+            </td>
             <td><a href="decks/<%=d._id%>"><%= d.name %></a></td>
             <!-- needs to show due cards for EACH deck -->
-              <td>#</td>
+            <td>#</td>
             <td><%=d.flashcards.length%></td>
           </tr>
           <% }); %>
         </tbody>
       </table>
     </div>
-
   </body>
 </html>

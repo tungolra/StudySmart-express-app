@@ -146,11 +146,21 @@ button {
   justify-content: center;
   padding: 10px;
 }
+.form-container > form > input {
+  padding: 5px;
+}
 .form-container > form > div {
   display: flex;
   flex-direction: wrap;
   justify-content: center;
   padding: 10px;
+}
+.form-container > form { 
+  border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px solid rgb(87, 173, 249);
+    background-color: rgba(240, 248, 255);
 }
 .form-container > form > div > label {
   margin-right: 10px;
@@ -199,11 +209,7 @@ button {
   display: flex;
   flex-direction: row;
 }
-button {
-  margin: 10px;
-  padding: 3px;
-  border-radius: 5px;
-}
+
 /* flashcards page end  */
 
 /* edit card page start */
@@ -226,7 +232,7 @@ h2 {
   border: none;
   padding: 0 5px;
 }
-.delete-card { 
+.delete-card {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -260,3 +266,57 @@ h2 {
 .edit-container > div > form > button {
 }
 /* edit deck page end */
+/* tablet styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+}
+
+/* desktop styles */
+@media only screen and (min-width: 961px) {
+  .page-text {
+    margin: 50px;
+  }
+  .page-text > h2 {
+    margin-bottom: 10px;
+  }
+
+  .display-container {
+    display: flex;
+    width: 90vw;
+    margin: 0 20px;
+
+
+  }
+  .options-container {
+    justify-content: space-around;
+  }
+  table {
+    width: 70vw;
+    text-align: center;
+    margin: auto;
+  }
+
+  .form-container > form > input {
+    padding: 10px;
+  }
+  table { 
+    width: 40vw;
+  }
+  .display-container > button { 
+    justify-content: center;
+    width: 100px;
+    padding: 3px;
+  }
+  .show-container {
+    flex-direction: column;
+  }
+  .front-container, .back-container { 
+    width: 50vw;
+  }
+  .finished { 
+    border: 2px solid rgb(87, 173, 249);
+    background-color: rgba(240, 248, 255);
+    padding: 5px;
+    width: 200px;
+    justify-content: center;
+  }
+}
