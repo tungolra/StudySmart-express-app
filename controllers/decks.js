@@ -2,7 +2,6 @@ const { MongoDriverError } = require("mongodb");
 const User = require("../models/user");
 
 function index(req, res) {
-  
   let decks = req.user.decks;
   let allCards = decks.reduce((acc, deck) => {
     let newDeck = deck.flashcards.map((card) => ({
@@ -24,7 +23,6 @@ function create(req, res) {
   });
 }
 function show(req, res) {
-
   let deckID = req.params.id;
   let deck = req.user.decks.find((deck) => {
     if (deck._id == req.params.id) {
