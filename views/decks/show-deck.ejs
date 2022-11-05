@@ -88,83 +88,84 @@
           let flashcards = await fetch(endpoint).then((res) =>
             res.json().then((data) => {
               cards = data.deck.flashcards;
-              //render functionality
-              document.querySelector(".cards-due").textContent = cards.length;
-              studyNow.addEventListener("click", function () {
-                if (frontContainer.style.display === "none") {
-                  frontContainer.style.display = "flex";
-                  displayContainer.style.display = "none";
-                  showAnswer.style.display = "flex";
-                }
-                frontContainer.textContent = cards[counter].front;
-                backContainer.textContent = cards[counter].back;
-              });
-              showAnswer.addEventListener("click", function () {
-                if (
-                  postReveal.style.display === "none" &&
-                  backContainer.style.display === "none"
-                ) {
-                  postReveal.style.display = "flex";
-                  backContainer.style.display = "flex";
-                  showAnswer.style.display = "none";
-                }
-              });
-
-              let status;
-              for (let i = 0; i < difficultyBtns.length; i++) {
-                difficultyBtns[i].addEventListener("click", function () {
-                  let currentDueDate = cards[counter].due;
-                  const newDate = new Date();
-                  if (difficultyBtns[i].classList.contains("again")) {
-                    newDate.setMinutes(newDate.getMinutes() + 15);
-                    status = "Due";
-                  }
-                  if (difficultyBtns[i].classList.contains("hard")) {
-                    newDate.setDate(newDate.getDate() + 1);
-                    status = "Pending";
-                  }
-                  if (difficultyBtns[i].classList.contains("good")) {
-                    newDate.setDate(newDate.getDate() + 3);
-                    status = "Pending";
-                  }
-                  if (difficultyBtns[i].classList.contains("easy")) {
-                    newDate.setDate(newDate.getDate() + 7);
-                    status = "Pending";
-                  }
-                  async function update() {
-                    await axios.put(
-                      `/api/decks/${deckID}/flashcards/${cards[counter]._id}`,
-                      { currentDueDate: newDate, status: status }
-                    );
-                  }
-                  update();
-                  if (counter < cards.length - 1) {
-                    counter++;
-                    frontContainer.textContent = cards[counter].front;
-                    backContainer.style.display = "none";
-                    showAnswer.style.display = "flex";
-                    postReveal.style.display = "none";
-                    backContainer.textContent = cards[counter].back;
-                  } else {
-                    displayContainer.style.display = "flex";
-                    finished.style.display = "flex";
-                    showContainer.style.display = "none";
-                    document.querySelector(".cards-due").textContent = 0;
-                  }
-                });
-              }
             })
           );
+          document.querySelector(".cards-due").textContent = cards.length;
+          studyNow.addEventListener("click", function () {
+            switchDisplays(cards);
+          });
+          showAnswer.addEventListener("click", function () {
+            showCard();
+          });
+          let status;
+          for (let i = 0; i < difficultyBtns.length; i++) {
+            difficultyBtns[i].addEventListener("click", function () {
+              let currentDueDate = cards[counter].due;
+              const newDate = new Date();
+              if (difficultyBtns[i].classList.contains("again")) {
+                newDate.setMinutes(newDate.getMinutes() + 15);
+                status = "Due";
+              }
+              if (difficultyBtns[i].classList.contains("hard")) {
+                newDate.setDate(newDate.getDate() + 1);
+                status = "Pending";
+              }
+              if (difficultyBtns[i].classList.contains("good")) {
+                newDate.setDate(newDate.getDate() + 3);
+                status = "Pending";
+              }
+              if (difficultyBtns[i].classList.contains("easy")) {
+                newDate.setDate(newDate.getDate() + 7);
+                status = "Pending";
+              }
+              async function update() {
+                await axios.put(
+                  `/api/decks/${deckID}/flashcards/${cards[counter]._id}`,
+                  { currentDueDate: newDate, status: status }
+                );
+              }
+              update();
+              if (counter < cards.length - 1) {
+                counter++;
+                frontContainer.textContent = cards[counter].front;
+                backContainer.style.display = "none";
+                showAnswer.style.display = "flex";
+                postReveal.style.display = "none";
+                backContainer.textContent = cards[counter].back;
+              } else {
+                displayContainer.style.display = "flex";
+                finished.style.display = "flex";
+                showContainer.style.display = "none";
+                document.querySelector(".cards-due").textContent = 0;
+              }
+            });
+          }
         } catch (err) {
           console.log(err);
         }
       }
-      var s = <%- JSON.stringify(deckID); %>
+      var s  = <%- JSON.stringify(deckID); %>
       getData(s);
 
-      function showCard() {}
-      function showBack() {}
-      function updateCard() {}
+      function switchDisplays(cards) {
+        if (frontContainer.style.display === "none") {
+          frontContainer.style.display = "flex";
+          displayContainer.style.display = "none";
+          showAnswer.style.display = "flex";
+        }
+        frontContainer.textContent = cards[counter].front;
+        backContainer.textContent = cards[counter].back;
+      }
+      function showCard() {
+        if (
+          postReveal.style.display === "none" &&
+          backContainer.style.display === "none"
+        ) {
+          postReveal.style.display = "flex";
+          backContainer.style.display = "flex";
+          showAnswer.style.display = "none";
+        }
+      }
     </script>
   </body>
 </html>
