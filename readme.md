@@ -72,6 +72,7 @@ JavaScript
 Express
 Mongoose
 MongoDB
+Google OAuth 2.0
 AJAX
 Node.js
 CSS
